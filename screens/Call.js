@@ -56,7 +56,7 @@ export default function Call({navigation, ...props}) {
           setUserId(id);
         } else {
           setUserId('');
-          navigation.push('Login');
+          
         }
       });
     }, [userId]),

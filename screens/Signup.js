@@ -78,7 +78,7 @@ export default function Signup({ navigation }) {
     <View style={styles.row}>
       <Text style={styles.best}>Already have an account? </Text>
       <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-        <Text style={styles.link}> Sign up</Text>
+        <Text style={styles.link}>  Log in</Text>
       </TouchableOpacity>
     </View>
   </Background>
@@ -98,12 +98,13 @@ const styles = StyleSheet.create({
   },
   best: {
 
-    color: '#FFFFFF'
+    color: '#3BCBFF',
+    fontWeight: 'bold',
   },
 
   link: {
     fontWeight: 'bold',
-    color: theme.colors.primary,
+    color: '#3BCBFF',
   },
   title: {
     fontSize: 30,

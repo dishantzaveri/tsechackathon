@@ -14,7 +14,7 @@ const SwiperScreens = ({navigation}) => {
   const create = require('../assets/create.jpg');
   const connect = require('../assets/connect.jpg');
   const grow = require('../assets/grow.jpg');
-  const getStarted = require('../assets/getStarted.jpg');
+  const getStarted = require('../assets/best.jpg');
 
 
   const LearnScreen = () => {
@@ -187,7 +187,7 @@ const SwiperScreens = ({navigation}) => {
         mode="contained"
         onPress={() => navigation.navigate('auth')}
         style={{marginTop: 6}}>
-      SENSOR
+     PATIENT
       </Button>
  
           </View>

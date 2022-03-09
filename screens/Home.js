@@ -40,9 +40,7 @@ const Home = ({navigation}) => {
     },
   
   ];
-  Linking
-  .openURL('https://link.com')
-  .catch(err => console.error('Error', err));
+ 
   return (
     <View style={styles.container}>
       

@@ -4,7 +4,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './Home';
 
 import Quiz from './Quiz';
-import Game from './Game';
 
 const HomeNavigation = () => {
   const Stack = createStackNavigator();
