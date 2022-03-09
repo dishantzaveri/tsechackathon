@@ -1,20 +1,22 @@
 import './styles/App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import { Home } from './pages/Home'
+import { DocHome } from './pages/DocHome'
 import { Login } from './pages/Login'
 import { Signup } from './pages/Signup'
 import { NavBar } from './components/NavBar'
 import { LoginDoctor } from './pages/LoginDoctor'
 import { LoginFamily } from './pages/LoginFamily'
+import { FamHome } from './pages/FamHome'
 
 const App = () => {
   return (
     <>
       <Router>
-      <NavBar />
+      {/* <NavBar /> */}
         <Routes>
           <Route path='/' element={<Login />} />
-          <Route path='/home' element={<Home />} />
+          <Route path='/doc/home' element={<DocHome />} />
+          <Route path='/fam/home' element={<FamHome />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/login/doctor' element={<LoginDoctor />} />
           <Route path='/login/family' element={<LoginFamily />} />

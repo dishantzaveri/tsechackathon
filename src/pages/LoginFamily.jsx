@@ -10,7 +10,7 @@ export const LoginFamily = () => {
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const handleClick = () => {
-    navigate('/home')
+    navigate('/fam/home')
     // let data = JSON.stringify({
     //   "email": email,
     //   "password": password,

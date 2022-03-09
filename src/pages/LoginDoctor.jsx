@@ -10,7 +10,7 @@ export const LoginDoctor = () => {
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const handleClick = () => {
-    navigate('/home')
+    navigate('/doc/home')
     // let data = JSON.stringify({
     //   "email": email,
     //   "password": password,
@@ -37,7 +37,7 @@ export const LoginDoctor = () => {
     <div className="h-[90vh] flex justify-center items-center">
       <div className='w-[40vw] flex flex-col justify-center items-center gap-8'>
         <h1 className='text-5xl font-semibold'>Login as Doctor</h1>
-        <input className='px-6 py-4 border-2 border-gray-900 text-lg rounded-xl w-full' placeholder='Enter Patient' type="text" value={email} onChange={e => setEmail(e.target.value)} />
+        <input className='px-6 py-4 border-2 border-gray-900 text-lg rounded-xl w-full' placeholder='Enter Patient Name' type="text" value={email} onChange={e => setEmail(e.target.value)} />
         <div className='w-full'>
           <input className='px-6 py-4 border-2 border-gray-900 text-lg rounded-xl w-full' placeholder='Enter Patient Code' type={showPassword ? "text" : 'password'} value={password} onChange={e => setPassword(e.target.value)} /> 
           {showPassword ? <VisibilityOffIcon onClick={e => setShowPassword(!showPassword)} className='ml-[-40px]' /> : <VisibilityIcon onClick={e => setShowPassword(!showPassword)} className='ml-[-40px]' />}
