@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'patient',
     'corsheaders',
     'drf_yasg',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [

@@ -1,11 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from rest_framework.authtoken.models import Token
+from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
 class Patient(AbstractUser):
 
     # extra fields
+    phone_no = PhoneNumberField(unique = True,null=True)
     doc_code = models.PositiveIntegerField(unique=True,blank=True,null=True)
     puzzles_solved = models.PositiveIntegerField(blank=True,null=True)
     number_of_vcs = models.PositiveIntegerField(blank=True,null=True)
@@ -28,4 +30,6 @@ class Medicine(models.Model):
 class ScrapBook(models.Model):
     patient = models.ForeignKey('Patient',null=False,default=1,on_delete=models.CASCADE)
     photo = models.ImageField(upload_to = 'scrapbook/',blank = True)
-    message = models.TextField(max_length = 200)
+    user_image = models.ImageField(upload_to = 'family_members/',null=True,blank=True)
+    realation_with_patient = models.CharField(max_length=20,null=True,blank=True)
+    message = models.TextField(max_length = 200,blank=True,null=True)

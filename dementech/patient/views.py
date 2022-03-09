@@ -9,9 +9,10 @@ from .serializers import *
 
 from rest_framework.response import Response
 from rest_framework.generics import GenericAPIView
+from rest_framework.decorators import action,api_view
 
-from django.contrib.sites.shortcuts import get_current_site
-from django.urls import reverse
+from .whatsapp import send_message
+from django.http import JsonResponse
 
 import environ
 
@@ -84,3 +85,12 @@ class ScrapBookAPI(viewsets.ModelViewSet):
 	def update(self, request, *args, **kwargs):
 		kwargs['partial'] = True
 		return super().update(request, *args, **kwargs)
+
+@api_view(['GET'])
+def meetlink(self,request):
+	patient = Patient.objects.get(user=self.request.user)
+	gmeet_link = "https://meet.google.com/jsc-utht-fkj"
+	message = f"Hello {patient.name}, a meeting has started. Click on this link to join the meeting: {gmeet_link}"
+	send_message(request,message)
+
+	return JsonResponse({"Message": "The message has been sent to the patient!"})
