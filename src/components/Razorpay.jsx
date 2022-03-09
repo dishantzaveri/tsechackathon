@@ -4,8 +4,8 @@ export const Razorpay = () => {
 
     const options = {
         key: 'rzp_test_fVZrFMvjkcR4Fa',
-        amount: '100', //  = INR 1
-        name: 'Acme shop',
+        amount: '100000', //  = INR 1
+        name: 'Consultant fees',
         description: 'some description',
         image: 'https://cdn.razorpay.com/logos/7K3b6d18wHwKzL_medium.png',
         handler: function(response) {
