@@ -10,7 +10,7 @@ def send_message(message):
     }
     headers = {
         "Content-Type": "application/json",
-        "Token": "342f92b9788a6b3ce778586775ede7673d790ed460f802c97ee13fffade7bc00b25b1f51a5fe5bf2"
+        "Token": "e4018cd24bb1f1a0fdc7287bfe29985556b0f22e0b93bfb24bda7c974b0ad23a683479e22e09f746"
     }
 
     response = requests.request("POST", url, json=payload, headers=headers)
