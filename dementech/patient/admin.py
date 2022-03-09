@@ -37,4 +37,7 @@ class PatientAdmin(UserAdmin):
     search_fields = ('username',)
     ordering = ('username',)
     filter_horizontal = ()
+
 admin.site.register(Patient, PatientAdmin)
+admin.site.register(Medicine)
+admin.site.register(ScrapBook)
