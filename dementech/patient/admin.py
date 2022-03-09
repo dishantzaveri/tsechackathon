@@ -41,3 +41,4 @@ class PatientAdmin(UserAdmin):
 admin.site.register(Patient, PatientAdmin)
 admin.site.register(Medicine)
 admin.site.register(ScrapBook)
+admin.site.register(Memes)

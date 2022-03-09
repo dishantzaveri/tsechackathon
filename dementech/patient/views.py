@@ -72,21 +72,21 @@ class MedicineAPI(viewsets.ModelViewSet):
 		kwargs['partial'] = True
 		return super().update(request, *args, **kwargs)
 	
-	def medicine_reminder(self):
-		medicine_objs = Medicine.objects.all()
+	# def medicine_reminder(self):
+	# 	medicine_objs = Medicine.objects.all()
 		
-		for medicine_obj in medicine_objs:
-			if date.today().strftime('%Y-%m-%d') == str(medicine_obj.date):
-				current_time = time.strftime("%H:%M:%S")
-				if current_time == str(medicine_obj.time):
-					patient = medicine_obj.patient
-					dosage_info = medicine_obj.dosage_info
-					medicine_name = medicine_obj.name
-					#message = f"Hello {patient.username}, it is time to take {medicine_name}.The instructions are: {dosage_info}"
-					message = f"Hello Shrey, it is time to take {medicine_name}.The instructions are: {dosage_info}"
-					send_message(message)
+	# 	for medicine_obj in medicine_objs:
+	# 		if date.today().strftime('%Y-%m-%d') == str(medicine_obj.date):
+	# 			current_time = time.strftime("%H:%M:%S")
+	# 			if current_time == str(medicine_obj.time):
+	# 				patient = medicine_obj.patient
+	# 				dosage_info = medicine_obj.dosage_info
+	# 				medicine_name = medicine_obj.name
+	# 				#message = f"Hello {patient.username}, it is time to take {medicine_name}.The instructions are: {dosage_info}"
+	# 				message = f"Hello Shrey, it is time to take {medicine_name}.The instructions are: {dosage_info}"
+	# 				send_message(message)
 		
-		return JsonResponse({"Message": "The message has been sent to the patient!"})
+	# 	return JsonResponse({"Message": "The message has been sent to the patient!"})
 
 
 class ScrapBookAPI(viewsets.ModelViewSet):
