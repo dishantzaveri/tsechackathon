@@ -39,7 +39,7 @@ class RegisterAPI(GenericAPIView):
 class LoginAPI(GenericAPIView):
 	
 	serializer_class = LoginSerializer
-	
+	#
 	def post(self,request,*args,**kwargs ):
 		username = request.data.get('username',None)
 		password = request.data.get('password',None)
