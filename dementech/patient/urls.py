@@ -15,6 +15,7 @@ urlpatterns = [
     path('', include(router.urls)),
     path('register/', views.RegisterAPI.as_view(), name = 'register'),
     path('login/', views.LoginAPI.as_view(), name = 'login'),
+    path('videocall',views.meetlink,name="videocall"),
 ]
 
 if settings.DEBUG:

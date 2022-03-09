@@ -7,8 +7,8 @@ class PatientAdmin(UserAdmin):
     model = Patient
     # list_display = ['email', 'pincode', 'phone','is_staff','is_active']
     # list_filter = ['email', 'pincode', 'phone','is_staff','is_active']
-    list_display = ['username','doc_code','is_staff','is_active']
-    list_filter = ['username','doc_code','is_staff','is_active']
+    list_display = ['username','phone_no','doc_code','is_staff','is_active']
+    list_filter = ['username','phone_no','doc_code','is_staff','is_active']
 
     # fieldsets = (
     #     (None, {'fields': ('email', 'password')}),
@@ -17,7 +17,7 @@ class PatientAdmin(UserAdmin):
     # )
 
     fieldsets = (
-        (None, {'fields': ('username', 'password','doc_code')}),
+        (None, {'fields': ('username','phone_no', 'password','doc_code')}),
         ('Permissions', {'fields': ('is_active','is_staff')}),
     )
 
@@ -31,7 +31,7 @@ class PatientAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide,'),
-            'fields': ('username', 'password1', 'password2','doc_code', 'is_staff','is_active'),
+            'fields': ('username','phone_no', 'password1', 'password2','doc_code', 'is_staff','is_active'),
         }),
     )
     search_fields = ('username',)
