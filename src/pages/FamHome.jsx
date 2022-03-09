@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Carousel from 'react-material-ui-carousel';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 import { InfoCard } from '../components/InfoCard';
+import { NavBar } from '../components/NavBar';
 
 const data = [
   {
@@ -82,122 +83,125 @@ const data = [
 export const FamHome = () => {
   
   return (
-    <div className='grid grid-cols-12'>
-      <div className='col-span-5'>
-        <div className='w-full px-12 py-8 flex flex-col justify-center items-center'>
-          <h1 className="text-4xl font-semibold">
-            Progress
-          </h1>
-          <div className='w-[70%]'>
-            <div className="rounded-xl px-8 py-4 bg-[#3BCBFF] w-full mt-8">
-              <div className="flex justify-between">
-                <h1 className="text-xl font-semibold">Puzzles</h1>
-                <h1 className="text-xl font-semibold">3/7</h1>
+    <div>
+      <NavBar />
+      <div className='grid grid-cols-12'>
+        <div className='col-span-5'>
+          <div className='w-full px-12 py-6 flex flex-col justify-center items-center'>
+            <h1 className="text-4xl font-semibold">
+              Progress
+            </h1>
+            <div className='w-[80%]'>
+              <div className="rounded-xl px-8 py-4 bg-[#3BCBFF] w-full mt-6">
+                <div className="flex justify-between mb-2">
+                  <h1 className="text-xl font-semibold">Puzzles</h1>
+                  <h1 className="text-xl font-semibold">3/7</h1>
+                </div>
+                <div className="w-full flex rounded-lg">
+                  <div className="flex-grow h-3 shadow rounded-lg bg-blue-600"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-blue-600"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-blue-600"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
+                </div>
               </div>
-              <div className="w-full flex rounded-lg">
-                <div className="flex-grow h-2 rounded-lg bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-gray-400 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-gray-400 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-gray-400 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-gray-400 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
+              <div className="rounded-xl px-8 py-4 bg-[#3BCBFF] w-full mt-6">
+                <div className="flex justify-between mb-2">
+                  <h1 className="text-xl font-semibold">Video Calls</h1>
+                  <h1 className="text-xl font-semibold">3/7</h1>
+                </div>
+                <div className="w-full flex rounded-lg">
+                  <div className="flex-grow h-3 shadow rounded-lg bg-blue-600"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-blue-600"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-blue-600"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
+                </div>
+              </div> 
+            </div>             
+            <div className='flex flex-col justify-center items-center px-12 mt-8 w-full'>
+              <h1 className="text-4xl font-semibold">Blogs</h1>
+              <div className='w-full mt-6'>
+                <Carousel className='h-[450px]'>
+                  <InfoCard />
+                  <InfoCard />
+                  <InfoCard />
+                  <InfoCard />
+                </Carousel>
               </div>
-            </div>
-            <div className="rounded-xl px-8 py-4 bg-[#3BCBFF] w-full mt-8">
-              <div className="flex justify-between">
-                <h1 className="text-xl font-semibold">Video Calls</h1>
-                <h1 className="text-xl font-semibold">3/7</h1>
-              </div>
-              <div className="w-full flex rounded-lg">
-                <div className="flex-grow h-2 rounded-lg bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-gray-400 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-gray-400 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-gray-400 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-gray-400 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-              </div>
-            </div>
-          </div>
-          <div className='flex flex-col justify-center items-center px-12 mt-12 w-full'>
-            <h1 className="text-3xl font-semibold">Blogs</h1>
-            <div className='w-full mt-8'>
-              <Carousel className='h-[450px]'>
-                <InfoCard />
-                <InfoCard />
-                <InfoCard />
-                <InfoCard />
-              </Carousel>
             </div>
           </div>
         </div>
-      </div>
-      <div className='w-full col-span-7'>
-        <div className='flex flex-col justify-center items-center px-12 py-8'>
-          <h1 className='text-4xl font-semibold'>Graph</h1>
-          <BarChart
-            width={800}
-            height={500}
-            data={data}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Bar name="healthy" dataKey="pv" fill="#FB008B" />
-            <Bar name="junk" dataKey="uv" fill="#FCC13F" />
-          </BarChart>
-        </div>
-        <div className="flex flex-col justify-center items-center px-12 gap-2">
-          <h1 className="text-3xl font-semibold mb-4">Todays Prescription</h1>
-          <div className='grid grid-cols-12 w-full'>
-            <div className='col-span-2 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-              <h1 className="text-2xl font-semibold">Timing</h1>
-            </div>
-            <div className='col-span-4 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-              <h1 className="text-2xl font-semibold">Medicine</h1>
-            </div>
-            <div className='col-span-3 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-              <h1 className="text-2xl font-semibold">Dosage</h1>
-            </div>
-            <div className='col-span-3 flex flex-col justify-center items-center'>
-              <h1 className="text-2xl font-semibold">Status</h1>
-            </div>
+        <div className='w-full col-span-7'>
+          <div className='flex flex-col justify-center items-center px-12 py-6'>
+            <h1 className='text-4xl font-semibold mb-4'>Graph</h1>
+            <BarChart
+              width={800}
+              height={500}
+              data={data}
+              margin={{
+                top: 5,
+                right: 30,
+                left: 20,
+                bottom: 5
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Bar name="healthy" dataKey="pv" fill="#FB008B" />
+              <Bar name="junk" dataKey="uv" fill="#FCC13F" />
+            </BarChart>
           </div>
-          <div className='grid grid-cols-12 w-full'>
-            <div className='col-span-2 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-              <h1 className="text-xl">3.30 AM</h1>
+          <div className="flex flex-col justify-center items-center px-12 gap-2">
+            <h1 className="text-4xl font-semibold mb-4">Todays Prescription</h1>
+            <div className='grid grid-cols-12 w-full'>
+              <div className='col-span-2 flex flex-col justify-center items-center border-r-2 border-gray-400'>
+                <h1 className="text-2xl font-semibold">Timing</h1>
+              </div>
+              <div className='col-span-4 flex flex-col justify-center items-center border-r-2 border-gray-400'>
+                <h1 className="text-2xl font-semibold">Medicine</h1>
+              </div>
+              <div className='col-span-3 flex flex-col justify-center items-center border-r-2 border-gray-400'>
+                <h1 className="text-2xl font-semibold">Dosage</h1>
+              </div>
+              <div className='col-span-3 flex flex-col justify-center items-center'>
+                <h1 className="text-2xl font-semibold">Status</h1>
+              </div>
             </div>
-            <div className='col-span-4 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-              <h1 className="text-xl">XYZ</h1>
+            <div className='grid grid-cols-12 w-full'>
+              <div className='col-span-2 flex flex-col justify-center items-center border-r-2 border-gray-400'>
+                <h1 className="text-xl">3.30 AM</h1>
+              </div>
+              <div className='col-span-4 flex flex-col justify-center items-center border-r-2 border-gray-400'>
+                <h1 className="text-xl">XYZ</h1>
+              </div>
+              <div className='col-span-3 flex flex-col justify-center items-center border-r-2 border-gray-400'>
+                <h1 className="text-xl">1 pill</h1>
+              </div>
+              <div className='col-span-3 flex flex-col justify-center items-center'>
+                <h1 className="text-xl">Taken</h1>
+              </div>
             </div>
-            <div className='col-span-3 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-              <h1 className="text-xl">1 pill</h1>
-            </div>
-            <div className='col-span-3 flex flex-col justify-center items-center'>
-              <h1 className="text-xl">Taken</h1>
-            </div>
-          </div>
-          <div className='grid grid-cols-12 w-full'>
-            <div className='col-span-2 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-              <h1 className="text-xl">3.30 AM</h1>
-            </div>
-            <div className='col-span-4 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-              <h1 className="text-xl">XYZ</h1>
-            </div>
-            <div className='col-span-3 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-              <h1 className="text-xl">1 pill</h1>
-            </div>
-            <div className='col-span-3 flex flex-col justify-center items-center'>
-              <h1 className="text-xl">Taken</h1>
+            <div className='grid grid-cols-12 w-full'>
+              <div className='col-span-2 flex flex-col justify-center items-center border-r-2 border-gray-400'>
+                <h1 className="text-xl">3.30 AM</h1>
+              </div>
+              <div className='col-span-4 flex flex-col justify-center items-center border-r-2 border-gray-400'>
+                <h1 className="text-xl">XYZ</h1>
+              </div>
+              <div className='col-span-3 flex flex-col justify-center items-center border-r-2 border-gray-400'>
+                <h1 className="text-xl">1 pill</h1>
+              </div>
+              <div className='col-span-3 flex flex-col justify-center items-center'>
+                <h1 className="text-xl">Taken</h1>
+              </div>
             </div>
           </div>
         </div>
