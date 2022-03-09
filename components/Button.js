@@ -23,12 +23,12 @@ const styles = StyleSheet.create({
     width: '100%',
     marginVertical: 10,
     paddingVertical: 2,
-    backgroundColor:'#28FF64',
+    backgroundColor:'#3BCBFF',
   },
   text: {
     fontWeight: 'bold',
     fontSize: 15,
     lineHeight: 26,
-    color:'#0F092D',
+    color:'#000000',
   },
 })

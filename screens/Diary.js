@@ -8,9 +8,7 @@ import {
   Text,
   ImageBackground
 } from 'react-native';
-
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import axios from 'axios';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export default function Diary() {
   const [filteredData, setFilteredData] = useState([]);
@@ -19,112 +17,132 @@ export default function Diary() {
   }, []);
 
   const fetchData = async () => {
-   
+
     var axios = require('axios');
 
     var config = {
       method: 'get',
       url: 'https://dementech.pythonanywhere.com/scrapbook/',
-      headers: { 
+      headers: {
         'Authorization': 'Token 60a6b5ea81823c883d178b7b2ad57b618d712707'
       }
     };
-    
+
     axios(config)
-    .then(function (response) {
-      console.log(JSON.stringify(response.data));
-      setFilteredData(response.data);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        setFilteredData(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
 
   };
 
   const renderItem = ({ item }) => {
     return (
-      <TouchableOpacity 
-      >
-        <View style={styles.card}>
-          <View style={{
-            flex: 1, flexDirection: 'row', backgroundColor: '#768991', borderWidth: 1, borderColor: '#768991',
-            borderStyle: 'solid', borderRadius: 15
-          }}>
-         
-            <ImageBackground
-              source={{
-                uri: item.photo,
-              }}
-              style={styles.image}></ImageBackground>
-            
+      <View style={styles.feedItem} elevation={15}>
+        <ImageBackground source={{
+          uri: item.user_image,
+        }} style={styles.avatar} />
+        <View style={{ flex: 1 }}>
+          <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+            <View>
+              <Text style={styles.name}>{item.relation_with_patient}</Text>
+    
+            </View>
+          </View>
+          <Text style={styles.post}>{item.message}</Text>
+          <ImageBackground source={{
+            uri: item.photo,
+          }} style={styles.postImage} resizeMode="cover" />
+          <View style={{ flexDirection: "row" }}>
+            <Icon name="ios-heart-outline" size={24} color="#73788B" style={{ marginRight: 16 }} />
+            <Icon name="chatbox" size={24} color="#73788B" />
           </View>
         </View>
-      </TouchableOpacity>
+      </View>
 
     );
   };
 
   return (
     <View style={styles.container}>
-   
-        <FlatList
-          data={filteredData}
-          keyExtractor={({ id }) => id}
-          contentContainerStyle={{}}
-          renderItem={renderItem}
 
-        />
+      <FlatList
+        data={filteredData}
+        keyExtractor={({ id }) => id}
+        contentContainerStyle={{}}
+        renderItem={renderItem}
 
-      </View>
-    
+      />
+
+    </View>
+
   );
 }
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
-    backgroundColor: '#1f2128',
+    backgroundColor:'#3BCBFF',
+  
   },
-  input: {
-    padding: 7,
-    flex: 1,
-    borderBottomColor: "white",
-    color: "white",
+  header: {
+    paddingTop: 64,
+    paddingBottom: 16,
+     backgroundColor:'#3BCBFF',
+    alignItems: "center",
+    justifyContent: "center",
+    borderBottomWidth: 1,
+    borderBottomColor: "#EBECF4",
+ 
   },
-  inputCard: {
-    margin: 20,
-    flexDirection: 'row',
-    backgroundColor: '#1f2128',
-    alignItems: 'center',
+  headerTitle: {
+    fontSize: 20,
+    fontWeight: "500"
+  },
+  feed: {
+    marginHorizontal: 10
+  },
+  feedItem: {
+    backgroundColor: "#FFF",
     borderRadius: 5,
-    zIndex: 100,
-    borderColor: "white",
-    borderWidth: 0.5
+    padding: 8,
+    flexDirection: "row",
+    margin:25,
+    shadowColor: "#000000",
+    shadowOffset: { height: 15 },
+    shadowRadius: 15,
+    shadowOpacity: 10,
   },
-
-
-  title: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
+  avatar: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    marginRight: 16
   },
-  card: {
-    height: 100,
-    width: 370,
-    paddingLeft: 10,
-    margin: 15,
-    marginLeft: 15,
-
-    marginTop: 5,
-    borderWidth: 1,
-    backgroundColor: '#768991',
-    borderColor: '#768991',
-    borderStyle: 'solid',
-    borderRadius: 15,
+  name: {
+    fontSize: 15,
+    fontWeight: "500",
+    color: "#454D65"
   },
-  image:{
-    width: 80, height: 80, margin: 5, marginTop: 8, marginLeft: 1 
-
+  timestamp: {
+    fontSize: 11,
+    color: "#C4C6CE",
+    marginTop: 4
+  },
+  post: {
+    marginTop: 16,
+    fontSize: 14,
+    color: "#838899"
+  },
+  postImage: {
+    width: undefined,
+    height: 150,
+    borderRadius: 5,
+    marginVertical: 16
   }
 
 });

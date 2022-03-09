@@ -98,7 +98,7 @@ export default function Login({ navigation }) {
           saveData();
           navigation.navigate('payment');
         }}
-        style={{ marginTop: 6 }}>
+        style={{ marginTop: 6 , color:"#000000"}}>
        LOGIN
       </Button>
       <View style={styles.row}>
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
 
   link: {
     fontWeight: 'bold',
-    color: theme.colors.primary,
+    color: "#FFFFFF",
   },
   buttonContainer: {
     width: '60%',

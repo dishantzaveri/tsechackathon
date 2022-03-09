@@ -168,11 +168,9 @@ const SwiperScreens = ({navigation}) => {
             alignItems: 'center',
             flex: 1,
           }}>
-          <Image
-            source={require('../assets/logo.png')}
-            style={{height: 210, width: 200}}
-          />
-          <View>
+         
+          <View style={{alignItems: 'center',justifyContent: 'center',
+            flex: 1,}}>
           <Button
         mode="contained"
         onPress={() => navigation.navigate('Login')}
@@ -189,7 +187,7 @@ const SwiperScreens = ({navigation}) => {
         mode="contained"
         onPress={() => navigation.navigate('auth')}
         style={{marginTop: 6}}>
-      FingerPrint
+      SENSOR
       </Button>
  
           </View>

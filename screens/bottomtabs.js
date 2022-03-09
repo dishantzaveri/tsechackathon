@@ -5,8 +5,13 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Home from './Home';
 import MentalHealthNavigation from './MentalHealthNavigation';
+import { NavigationContainer } from '@react-navigation/native';
+import { StackNavigator } from '@react-navigation/stack';
 // import Call from './Call';
 import Diary from './Diary';
+import Call from './Call';
+import Quiz from './Quiz';
+import HomeNavigation from './HomeNavigation';
 // import TopBarNavigator from './TopTabScreen';
 
 const Tab = createBottomTabNavigator();
@@ -15,8 +20,8 @@ const BottomTabs = ({route}) => {
   return (
     <Tab.Navigator initialRouteName="Home" activeColor="#fff">
       <Tab.Screen
-        name="Home"
-        component={Home}
+        name="HomeNavigation"
+        component={HomeNavigation}
         options={{
           headerShown: false,
           tabBarLabel: 'Home',
@@ -27,7 +32,7 @@ const BottomTabs = ({route}) => {
           ),
         }}
       />
-      {/* <Tab.Screen
+      <Tab.Screen
         name="Call"
         component={Call}
         options={{
@@ -36,10 +41,10 @@ const BottomTabs = ({route}) => {
           tabBarColor: '#1f65ff',
           tabBarIcon: ({color}) => (
 
-            <ion-icon name="call-outline" color={color} size={26} ></ion-icon>
+            <Icon name="ios-images" color={color} size={26} />
           ),
         }}
-      /> */}
+      />
       <Tab.Screen
         name="Diary"
         component={Diary}
@@ -68,3 +73,15 @@ const BottomTabs = ({route}) => {
   );
 };
 export default BottomTabs;
+
+function App() {
+  const Stack = createStackNavigator();
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Quiz" component={Quiz} />
+       
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}

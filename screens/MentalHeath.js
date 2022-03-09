@@ -73,7 +73,7 @@ const MentalHeath = props => {
   };
 
   return (
-    <View >
+    <View style={styles.container}>
       <ScrollView >
         <View >
           <View style={styles.tracksContainer}>
@@ -86,7 +86,7 @@ const MentalHeath = props => {
             />
           </View>
         </View>
-        <View>
+        {/* <View>
           <TouchableOpacity style={styles.rough}
             onPress={() => {
               props.navigation.navigate('CreateJoke');
@@ -95,8 +95,8 @@ const MentalHeath = props => {
               <Text style={styles.createMemeText}>Create a JOKE</Text>
             </View>
           </TouchableOpacity>
-        </View>
-        <View style={styles.container}>
+        </View> */}
+        <View style={styles.container1}>
           <View style={styles.YourDailyRead}>
             <View>
               <Text style={styles.YourDailyReadText}>
@@ -130,6 +130,7 @@ const MentalHeath = props => {
                               height: height - 500,
                               borderRadius: 14,
                               marginRight: 30,
+                              marginBottom:20
                             }}
                             resizeMode="cover"
                           />
@@ -201,15 +202,22 @@ const styles = StyleSheet.create({
     paddingTop: 0,
     paddingLeft: 20,
     position: 'relative',
+    backgroundColor:"#FFFFFF",
   },
    container:{
-    backgroundColor:'white',
+    backgroundColor:"#3BCBFF",
     flex:1
+  },
+  container1:{
+    backgroundColor:"#FFFFFF",
+    flex:1,
+    marginBottom:80
   },
   trackTitle: {
     fontSize: 18,
     textTransform: 'uppercase',
     fontWeight: 'bold',
+    color:"#000000"
   },
   track: {
     width: 150,
@@ -217,6 +225,7 @@ const styles = StyleSheet.create({
     margin: 10,
     borderRadius: 10,
     position: 'relative',
+    
   },
   trackContent: {
     width: 150,
@@ -228,30 +237,29 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     paddingLeft: 10,
     paddingBottom: 10,
+    marginBottom:10
   },
   trackImage: {
     opacity: 1,
+    marginBottom:10
   },
-  createMemeContainer: {
-    width: 150,
-    height: 40,
-    backgroundColor: '#46703b',
-    borderRadius: 10,
-    marginLeft: 20,
-    marginBottom: 20,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  createMemeText: {
-    color: 'white',
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
-  },
-  container: {
-    flex: 1,
-    marginLeft: 0,
-  },
+  // createMemeContainer: {
+  //   width: 150,
+  //   height: 40,
+  //   backgroundColor: '#46703b',
+  //   borderRadius: 10,
+  //   marginLeft: 20,
+  //   marginBottom: 20,
+  //   display: 'flex',
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  // },
+  // createMemeText: {
+  //   color: 'white',
+  //   fontWeight: 'bold',
+  //   textTransform: 'uppercase',
+  // },
+
   YourDailyRead: {
     marginTop: 10,
     marginBottom: 10,
@@ -290,11 +298,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  BlogImage: {
-    width: 90,
-    height: 90,
-    borderRadius: 10,
-  },
+
   verticalLine: {
     fontWeight: 'bold',
     color: "#face1b",

@@ -9,6 +9,7 @@ import Payment from './screens/payment';
 import Profile from './screens/Profile';
 import Auth from './screens/auth';
 import BottomTabs from './screens/bottomtabs';
+import Quiz from './screens/Quiz';
 
 const Stack = createStackNavigator();
 function App() {
@@ -39,6 +40,7 @@ function App() {
           name="auth"
           component={Auth}
           options={{ headerShown: false }}></Stack.Screen>
+    
 
 
 
