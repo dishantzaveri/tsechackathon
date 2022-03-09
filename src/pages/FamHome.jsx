@@ -1,101 +1,49 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'
-import Carousel from 'react-material-ui-carousel';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
-import { InfoCard } from '../components/InfoCard';
 import { NavBar } from '../components/NavBar';
-
-const data = [
-  {
-    name: '1',
-    uv: 300,
-    pv: 0,
-    amt: "Jan",
-  },
-  {
-    name: '2',
-    uv: 300,
-    pv: 0,
-    amt: "Feb",
-  },
-  {
-    name: '3',
-    uv: 200,
-    pv: 0,
-    amt: "Mar",
-  },
-  {
-    name: '4',
-    uv: 278,
-    pv: 200,
-    amt: "Apr",
-  },
-  {
-    name: '5',
-    uv: 189,
-    pv: 100,
-    amt: "May",
-  },
-  {
-    name: '6',
-    uv: 239,
-    pv: 200,
-    amt: "June",
-  },
-  {
-    name: '7',
-    uv: 349,
-    pv: 200,
-    amt: "July",
-  },
-  {
-    name: '8',
-    uv: 349,
-    pv: 0,
-    amt: "August",
-  },
-  {
-    name: '9',
-    uv: 349,
-    pv: 430,
-    amt: "Sept",
-  },
-  {
-    name: '10',
-    uv: 349,
-    pv: 430,
-    amt: "Oct",
-  },
-  {
-    name: '11',
-    uv: 349,
-    pv: 430,
-    amt: "Nov",
-  },
-  {
-    name: '12',
-    uv: 349,
-    pv: 430,
-    amt: "Dec",
-  },
-]
+import {data} from "../utils/assets/data2";
 
 export const FamHome = () => {
+
+  const [pres, setPres] = useState()
+
+  useEffect(()=> {
+
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Token 60a6b5ea81823c883d178b7b2ad57b618d712707");
+  
+    var requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+    };
+  
+    fetch("http://dementech.pythonanywhere.com/medicine_details/", requestOptions)
+    .then(response => response.json())
+    .then(result => {
+      console.log(result)
+      setPres(result)
+    })
+    .catch(error => console.log('error', error));
+  }, [])
   
   return (
     <div>
       <NavBar />
       <div className='grid grid-cols-12'>
         <div className='col-span-5'>
-          <div className='w-full px-12 py-6 flex flex-col justify-center items-center'>
-            <h1 className="text-4xl font-semibold">
+          <div className='w-full px-10 py-6 flex flex-col justify-center items-center'>
+            <div>
+              <h5 className='text-2xl'> Patient Details </h5>
+            </div>
+            <h5 className="text-2xl">
               Progress
-            </h1>
+            </h5>
             <div className='w-[80%]'>
               <div className="rounded-xl px-8 py-4 bg-[#3BCBFF] w-full mt-6">
                 <div className="flex justify-between mb-2">
-                  <h1 className="text-xl font-semibold">Puzzles</h1>
-                  <h1 className="text-xl font-semibold">3/7</h1>
+                  <h5 className="text-xl">Puzzles</h5>
+                  <h5 className="text-xl">3/7</h5>
                 </div>
                 <div className="w-full flex rounded-lg">
                   <div className="flex-grow h-3 shadow rounded-lg bg-blue-600"></div>
@@ -109,14 +57,14 @@ export const FamHome = () => {
               </div>
               <div className="rounded-xl px-8 py-4 bg-[#3BCBFF] w-full mt-6">
                 <div className="flex justify-between mb-2">
-                  <h1 className="text-xl font-semibold">Video Calls</h1>
-                  <h1 className="text-xl font-semibold">3/7</h1>
+                  <h5 className="text-xl">Video Calls</h5>
+                  <h5 className="text-xl">4/7</h5>
                 </div>
                 <div className="w-full flex rounded-lg">
                   <div className="flex-grow h-3 shadow rounded-lg bg-blue-600"></div>
                   <div className="flex-grow h-3 shadow rounded-lg bg-blue-600"></div>
                   <div className="flex-grow h-3 shadow rounded-lg bg-blue-600"></div>
-                  <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-blue-600"></div>
                   <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
                   <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
                   <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
@@ -126,8 +74,8 @@ export const FamHome = () => {
           </div>
         </div>
         <div className='w-full col-span-7'>
-          <div className='flex flex-col justify-center items-center px-12 py-6'>
-            <h1 className='text-4xl font-semibold mb-4'>Graph</h1>
+          <div className='flex flex-col justify-center items-center px-10 py-6'>
+            <h5 className='text-2xl mb-4'>Graph</h5>
             <BarChart
               width={800}
               height={500}
@@ -148,50 +96,40 @@ export const FamHome = () => {
               <Bar name="junk" dataKey="uv" fill="#FCC13F" />
             </BarChart>
           </div>
-          <div className="flex flex-col justify-center items-center px-12 gap-2">
-            <h1 className="text-4xl font-semibold mb-4">Todays Prescription</h1>
+          <div className="flex flex-col justify-center items-center px-12 gap-2 my-12">
+            <h5 className="text-2xl mb-4">Todays Prescription</h5>
             <div className='grid grid-cols-12 w-full'>
               <div className='col-span-2 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-                <h1 className="text-2xl font-semibold">Timing</h1>
+                <h5 className="text-2xl">Timing</h5>
               </div>
               <div className='col-span-4 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-                <h1 className="text-2xl font-semibold">Medicine</h1>
+                <h5 className="text-2xl">Medicine</h5>
               </div>
               <div className='col-span-3 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-                <h1 className="text-2xl font-semibold">Dosage</h1>
+                <h5 className="text-2xl">Dosage</h5>
               </div>
               <div className='col-span-3 flex flex-col justify-center items-center'>
-                <h1 className="text-2xl font-semibold">Status</h1>
+                <h5 className="text-2xl">Status</h5>
               </div>
             </div>
-            <div className='grid grid-cols-12 w-full'>
-              <div className='col-span-2 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-                <h1 className="text-xl">3.30 AM</h1>
+            {pres?pres.map((item, index)=>
+                <div key={index} className='grid grid-cols-12 w-full'>
+                <div className='col-span-2 flex flex-col justify-center items-center border-r-2 border-gray-400'>
+                  <h5 className="text-xl">{item.time}</h5>
+                </div>
+                <div className='col-span-4 flex flex-col justify-center items-center border-r-2 border-gray-400'>
+                  <h5 className="text-xl">{item.name}</h5>
+                </div>
+                <div className='col-span-3 flex flex-col justify-center items-center border-r-2 border-gray-400'>
+                  <h5 className="text-xl">{item.dosage_info}</h5>
+                </div>
+                <div className='col-span-3 flex flex-col justify-center items-center'>
+                  <h5 className="text-xl">Taken</h5>
+                </div>
               </div>
-              <div className='col-span-4 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-                <h1 className="text-xl">XYZ</h1>
-              </div>
-              <div className='col-span-3 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-                <h1 className="text-xl">1 pill</h1>
-              </div>
-              <div className='col-span-3 flex flex-col justify-center items-center'>
-                <h1 className="text-xl">Taken</h1>
-              </div>
-            </div>
-            <div className='grid grid-cols-12 w-full'>
-              <div className='col-span-2 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-                <h1 className="text-xl">3.30 AM</h1>
-              </div>
-              <div className='col-span-4 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-                <h1 className="text-xl">XYZ</h1>
-              </div>
-              <div className='col-span-3 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-                <h1 className="text-xl">1 pill</h1>
-              </div>
-              <div className='col-span-3 flex flex-col justify-center items-center'>
-                <h1 className="text-xl">Taken</h1>
-              </div>
-            </div>
+            ):
+              null
+            }
           </div>
         </div>
       </div>
