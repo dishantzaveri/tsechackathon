@@ -17,3 +17,14 @@ class Patient(AbstractUser):
     def token(self):
         token = Token.objects.get(user=Patient.objects.get(self.id))
         return token
+
+class Medicine(models.Model):
+    patient = models.ForeignKey('Patient',null=False,default=1,on_delete=models.CASCADE)
+    name = models.CharField(max_length=30)
+    dosage_info = models.TextField(max_length=100)
+    date = models.DateField()
+    time = models.TimeField()
+
+class ScrapBook(models.Model):
+    patient = models.ForeignKey('Patient',null=False,default=1,on_delete=models.CASCADE)
+    photo = models.ImageField(upload_to = 'scrapbook/',blank = True)

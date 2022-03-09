@@ -52,3 +52,19 @@ class LoginAPI(GenericAPIView):
 			token = Token.objects.get(user=user)
 			return Response({'token' : token.key,'username' : user.username},status = status.HTTP_200_OK)
 		return Response('Invalid Credentials',status = status.HTTP_404_NOT_FOUND)
+
+class MedicineAPI(viewsets.ModelViewSet):
+	queryset = Medicine.objects.all()
+	serializer_class = MedicineSerializer
+	permission_classes = [permissions.IsAuthenticated]
+
+	def get_queryset(self):
+		medicine_objs = Medicine.objects.filter(patient = self.request.user)
+		return medicine_objs
+	
+	def perform_create(self,serializer):
+		serializer.save(patient = self.request.user)
+	
+	def update(self, request, *args, **kwargs):
+		kwargs['partial'] = True
+		return super().update(request, *args, **kwargs)

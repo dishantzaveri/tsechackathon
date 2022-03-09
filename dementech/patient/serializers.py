@@ -31,3 +31,10 @@ class LoginSerializer(serializers.ModelSerializer):
     class Meta:
         model = Patient
         fields = ['username','password','doc_code']
+
+class MedicineSerializer(serializers.ModelSerializer):
+	patient = serializers.ReadOnlyField(source='patient.username')
+
+	class Meta:
+		model = Medicine
+		fields = '__all__'
