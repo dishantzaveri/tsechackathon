@@ -122,18 +122,7 @@ export const FamHome = () => {
                   <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
                 </div>
               </div> 
-            </div>             
-            <div className='flex flex-col justify-center items-center px-12 mt-8 w-full'>
-              <h1 className="text-4xl font-semibold">Blogs</h1>
-              <div className='w-full mt-6'>
-                <Carousel className='h-[450px]'>
-                  <InfoCard />
-                  <InfoCard />
-                  <InfoCard />
-                  <InfoCard />
-                </Carousel>
-              </div>
-            </div>
+            </div>              
           </div>
         </div>
         <div className='w-full col-span-7'>
