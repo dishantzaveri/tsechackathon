@@ -10,7 +10,7 @@ export const FamHome = () => {
   useEffect(()=> {
 
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Token 60a6b5ea81823c883d178b7b2ad57b618d712707");
+    myHeaders.append("Authorization", "Token d1ec4e38ba3181b9b0a1eb675318861644d1d78e");
   
     var requestOptions = {
       method: 'GET',
@@ -18,7 +18,7 @@ export const FamHome = () => {
       redirect: 'follow'
     };
   
-    fetch("http://dementech.pythonanywhere.com/medicine_details/", requestOptions)
+    fetch("http://localhost:8000/medicine_details/", requestOptions)
     .then(response => response.json())
     .then(result => {
       console.log(result)
@@ -97,7 +97,7 @@ export const FamHome = () => {
             </BarChart>
           </div>
           <div className="flex flex-col justify-center items-center px-12 gap-2 my-12">
-            <h5 className="text-2xl mb-4">Todays Prescription</h5>
+            <h5 className="text-2xl mb-4">Today's Prescription</h5>
             <div className='grid grid-cols-12 w-full'>
               <div className='col-span-2 flex flex-col justify-center items-center border-r-2 border-gray-400'>
                 <h5 className="text-2xl">Timing</h5>

@@ -12,9 +12,9 @@ export const NavBar = () => {
     navigate('/')
   }
   return (
-    <div className='flex justify-between items-center h-16 px-32'>
+    <div className='flex justify-between items-center h-16 px-24'>
       <Link to='/home'>
-        <img className='h-12' src={image} />
+        <img className='h-8' src={image} />
       </Link>
       <div className='flex'>
         {(login === 'family') && <Link className='mr-24 text-lg' to='/fam/memories'>Memories</Link>}

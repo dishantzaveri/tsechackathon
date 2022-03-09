@@ -17,7 +17,7 @@ export const Login = () => {
       <div className='flex justify-center items-center gap-24'>
         <Link to='/login/doctor'>
           <div className="flex flex-col justify-between items-center bg-[#3BCBFF] px-4 py-16 h-80 w-64 text-3xl text-grey-800 rounded-xl font-semibold shadow-xl hover:shadow-2xl">
-            <img className='rounded-full w-32' src={Doctor} />
+            <img className='rounded-full border border-4 border-black w-32' src={Doctor} />
             <h1>
               Doctor
             </h1>
@@ -25,7 +25,7 @@ export const Login = () => {
         </Link>
         <Link to='/login/family'>
           <div className="flex flex-col justify-between items-center bg-[#3BCBFF] px-4 py-16 h-80 w-64 text-3xl text-grey-800 rounded-xl font-semibold shadow-xl hover:shadow-2xl">
-            <img className='rounded-full w-32' src={Family} />
+            <img className='rounded-full border border-4 border-black w-32' src={Family} />
             <h1>
               Family
             </h1>
