@@ -6,6 +6,7 @@ import DatePicker from '@mui/lab/DatePicker';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import { NavBar } from '../components/NavBar'
 
 const data = [
   {
@@ -87,92 +88,95 @@ export const DocHome = () => {
   const [date, setDate] = useState(new Date())
   
   return (
-    <div className='grid grid-cols-12'>
-      <div className='col-span-5'>
-        <div className='w-full px-12 py-8 flex flex-col justify-center items-center'>
-          <h1 className="text-4xl font-semibold">
-            Progress
-          </h1>
-          <div className='w-[70%]'>
-            <div className="rounded-xl px-8 py-4 bg-[#3BCBFF] w-full mt-8">
-              <div className="flex justify-between">
-                <h1 className="text-xl font-semibold">Puzzles</h1>
-                <h1 className="text-xl font-semibold">3/7</h1>
+    <div>
+      <NavBar />
+      <div className='grid grid-cols-12'>
+        <div className='col-span-5'>
+          <div className='w-full px-12 py-6 flex flex-col justify-center items-center'>
+            <h1 className="text-4xl font-semibold">
+              Progress
+            </h1>
+            <div className='w-[80%]'>
+              <div className="rounded-xl px-8 py-4 bg-[#3BCBFF] w-full mt-6">
+                <div className="flex justify-between mb-2">
+                  <h1 className="text-xl font-semibold">Puzzles</h1>
+                  <h1 className="text-xl font-semibold">3/7</h1>
+                </div>
+                <div className="w-full flex rounded-lg">
+                  <div className="flex-grow h-3 shadow rounded-lg bg-blue-600"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-blue-600"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-blue-600"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
+                </div>
               </div>
-              <div className="w-full flex rounded-lg">
-                <div className="flex-grow h-2 rounded-lg bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-gray-400 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-gray-400 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-gray-400 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-gray-400 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-              </div>
-            </div>
-            <div className="rounded-xl px-8 py-4 bg-[#3BCBFF] w-full mt-8">
-              <div className="flex justify-between">
-                <h1 className="text-xl font-semibold">Video Calls</h1>
-                <h1 className="text-xl font-semibold">3/7</h1>
-              </div>
-              <div className="w-full flex rounded-lg">
-                <div className="flex-grow h-2 rounded-lg bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-gray-400 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-gray-400 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-gray-400 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-                <div className="flex-grow h-2 rounded-lg bg-gray-400 text-xs font-medium text-blue-100 text-center p-0.5 leading-none"></div>
-              </div>
+              <div className="rounded-xl px-8 py-4 bg-[#3BCBFF] w-full mt-6">
+                <div className="flex justify-between mb-2">
+                  <h1 className="text-xl font-semibold">Video Calls</h1>
+                  <h1 className="text-xl font-semibold">3/7</h1>
+                </div>
+                <div className="w-full flex rounded-lg">
+                  <div className="flex-grow h-3 shadow rounded-lg bg-blue-600"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-blue-600"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-blue-600"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
+                  <div className="flex-grow h-3 shadow rounded-lg bg-gray-400"></div>
+                </div>
+              </div> 
+            </div> 
+          </div>
+          <div className="flex justify-center items-center">
+            <div className='w-[70%] flex flex-col justify-center items-center gap-4'>
+              <h1 className='text-4xl font-semibold'>Prescribe</h1>
+              <LocalizationProvider dateAdapter={AdapterDateFns}>
+                <TextField fullWidth id="outlined-basic" label="Medicine Name" variant="outlined" />
+                <TextField fullWidth id="outlined-basic" label="Dosage" variant="outlined" />
+                <DatePicker
+                  label="Date"
+                  value={date}
+                  onChange={(newValue) => {
+                    setDate(newValue);
+                  }}
+                  renderInput={(params) => <TextField {...params} fullWidth />}
+                />
+                <TimePicker
+                  label="Time"
+                  value={time}
+                  onChange={newValue => setTime(newValue)}
+                  renderInput={(params) => <TextField {...params} fullWidth />}
+                />
+              </LocalizationProvider>
+              <button className='px-4 py-2 bg-blue-500 rounded-lg text-xl'>Add Prescription</button>
             </div>
           </div>
         </div>
-        <div className="flex justify-center items-center">
-          <div className='w-[70%] flex flex-col justify-center items-center gap-8'>
-            <h1 className='text-4xl font-semibold'>Prescribe</h1>
-            <LocalizationProvider dateAdapter={AdapterDateFns}>
-              <TextField fullWidth id="outlined-basic" label="Medicine Name" variant="outlined" />
-              <TextField fullWidth id="outlined-basic" label="Dosage" variant="outlined" />
-              <DatePicker
-                label="Date"
-                value={date}
-                onChange={(newValue) => {
-                  setDate(newValue);
-                }}
-                renderInput={(params) => <TextField {...params} fullWidth />}
-              />
-              <TimePicker
-                label="Time"
-                value={time}
-                onChange={newValue => setTime(newValue)}
-                renderInput={(params) => <TextField {...params} fullWidth />}
-              />
-            </LocalizationProvider>
-            <button className='px-8 py-4 bg-blue-500 rounded-xl'>Login</button>
+        <div className='w-full col-span-7'>
+          <div className='flex flex-col justify-center items-center px-12 py-6'>
+            <h1 className='text-4xl font-semibold mb-4'>Graph</h1>
+            <BarChart
+              width={850}
+              height={500}
+              data={data}
+              margin={{
+                top: 5,
+                right: 30,
+                left: 20,
+                bottom: 5
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Bar name="healthy" dataKey="pv" fill="#FB008B" />
+              <Bar name="junk" dataKey="uv" fill="#FCC13F" />
+            </BarChart>
           </div>
-        </div>
-      </div>
-      <div className='w-full col-span-7'>
-        <div className='flex flex-col justify-center items-center px-12 py-8'>
-          <h1 className='text-4xl font-semibold'>Graph</h1>
-          <BarChart
-            width={800}
-            height={500}
-            data={data}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Bar name="healthy" dataKey="pv" fill="#FB008B" />
-            <Bar name="junk" dataKey="uv" fill="#FCC13F" />
-          </BarChart>
         </div>
       </div>
     </div>
