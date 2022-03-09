@@ -31,5 +31,5 @@ class ScrapBook(models.Model):
     patient = models.ForeignKey('Patient',null=False,default=1,on_delete=models.CASCADE)
     photo = models.ImageField(upload_to = 'scrapbook/',blank = True)
     user_image = models.ImageField(upload_to = 'family_members/',null=True,blank=True)
-    realation_with_patient = models.CharField(max_length=20,null=True,blank=True)
+    relation_with_patient = models.CharField(max_length=20,null=True,blank=True)
     message = models.TextField(max_length = 200,blank=True,null=True)
