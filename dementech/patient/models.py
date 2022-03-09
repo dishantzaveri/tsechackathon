@@ -28,3 +28,4 @@ class Medicine(models.Model):
 class ScrapBook(models.Model):
     patient = models.ForeignKey('Patient',null=False,default=1,on_delete=models.CASCADE)
     photo = models.ImageField(upload_to = 'scrapbook/',blank = True)
+    message = models.TextField(max_length = 200)
