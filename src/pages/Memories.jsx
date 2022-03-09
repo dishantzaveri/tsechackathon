@@ -4,19 +4,54 @@ import ImageUploader from 'react-images-upload';
 import { InfoCard } from '../components/InfoCard'
 import { NavBar } from '../components/NavBar'
 import { TextField } from '@mui/material';
-import { Razorpay } from '../components/Razorpay'
+import { Razorpay } from '../components/Razorpay';
+import user from "../utils/icons/1.jpg"
 
 export const Memories = () => {
   const [pictures, setPictures] = useState([])
-  const onDrop = (pictureFiles, pictureDataURLs) => {
-    setPictures(pictures.concat(pictureFiles));
+  const [rel, setRel] = useState('')
+  const [desc, setDesc] = useState('')
+
+  const onDrop = (event) => {
+    setPictures(event);
   }
+
+  var myHeaders = new Headers();
+  myHeaders.append("Authorization", "Token 60a6b5ea81823c883d178b7b2ad57b618d712707");
+
+    const handleSubmit = (event) => {
+      event.preventDefault()
+      console.log(pictures[0])
+      console.log(rel)
+      console.log(desc)
+
+      console.log(new File([user],"user"))
+
+      var formdata = new FormData();
+      formdata.append("photo", pictures[0]);
+      formdata.append("relation_with_patient", rel);
+      formdata.append("message", desc);
+
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: formdata,
+        redirect: 'follow'
+      };
+
+      fetch("https://dementech.pythonanywhere.com/scrapbook/", requestOptions)
+      .then(response => response.json())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+    }
+
+
   return (
     <div>
       <NavBar />
       <div className="grid grid-cols-12">
         <div className='w-full px-12 py-6 flex flex-col items-center col-span-7'>
-          <div className='mt-6 w-[70%] flex flex-col items-center gap-4'>
+          <form onSubmit={handleSubmit} className='mt-6 w-[70%] flex flex-col items-center gap-4'>
             <h1 className="text-4xl font-semibold">Upload Images</h1>
             <ImageUploader
               withIcon={true}
@@ -24,12 +59,13 @@ export const Memories = () => {
               singleImage={true}
               buttonText='Choose image'
               onChange={onDrop}
-              imgExtension={['.jpg', '.gif', '.png', '.gif', '.jpeg']}
+              imgExtension={['.jpg', ' .gif', ' .png', ' .jpeg']}
               maxFileSize={5242880}
             />
-            <TextField multiline rows={4} fullWidth id="outlined-basic" label="Describe Image" variant="outlined" />
-            <button className='px-6 py-2 bg-blue-500 rounded-lg text-xl'>Post</button>
-          </div>
+            <TextField multiline rows={1} fullWidth id="outlined-basic" onChange={(newValue)=>setRel(newValue.target.value)} label="How do you know Shrey?" variant="outlined" />
+            <TextField multiline rows={3} fullWidth id="outlined-basic" onChange={(newValue)=>setDesc(newValue.target.value)} label="Tell Shrey more about the image" variant="outlined" />
+            <button type='submit' className='px-6 py-2 bg-blue-500 rounded-lg text-xl'>Post</button>
+          </form>
           <div className='mt-6 pt-6 w-[80%] flex flex-col justify-center items-center gap-4 border-dotted border-t-2 border-gray-400'>
             <h1 className="text-3xl font-semibold">
               Pay monthly consultant fees
