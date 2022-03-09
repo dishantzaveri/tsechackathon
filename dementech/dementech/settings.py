@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'drf_yasg',
     'phonenumber_field',
-    'apscheduler',
+    #'apscheduler',
 ]
 
 MIDDLEWARE = [
