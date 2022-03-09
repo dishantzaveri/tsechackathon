@@ -68,3 +68,19 @@ class MedicineAPI(viewsets.ModelViewSet):
 	def update(self, request, *args, **kwargs):
 		kwargs['partial'] = True
 		return super().update(request, *args, **kwargs)
+
+class ScrapBookAPI(viewsets.ModelViewSet):
+	queryset = ScrapBook.objects.all()
+	serializer_class = ScrapBookSerializer
+	permission_classes = [permissions.IsAuthenticated]
+
+	def get_queryset(self):
+		scrap_objs = ScrapBook.objects.filter(patient = self.request.user)
+		return scrap_objs
+	
+	def perform_create(self,serializer):
+		serializer.save(patient = self.request.user)
+	
+	def update(self, request, *args, **kwargs):
+		kwargs['partial'] = True
+		return super().update(request, *args, **kwargs)

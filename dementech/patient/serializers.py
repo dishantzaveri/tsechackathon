@@ -38,3 +38,11 @@ class MedicineSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Medicine
 		fields = '__all__'
+
+class ScrapBookSerializer(serializers.ModelSerializer):
+	patient = serializers.ReadOnlyField(source='patient.username')
+
+	class Meta:
+		model = ScrapBook
+		fields = '__all__'
+
