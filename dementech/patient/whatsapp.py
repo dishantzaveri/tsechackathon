@@ -1,11 +1,11 @@
 import requests
 
 
-def send_message(request, user, message):
+def send_message(message):
     url = "https://api.wassenger.com/v1/messages"
 
     payload = {
-        "phone": str(user.number),
+        "phone": str(+919833447698),
         "message": message
     }
     headers = {

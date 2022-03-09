@@ -87,10 +87,10 @@ class ScrapBookAPI(viewsets.ModelViewSet):
 		return super().update(request, *args, **kwargs)
 
 @api_view(['GET'])
-def meetlink(self,request):
-	patient = Patient.objects.get(user=self.request.user)
+def meetlink(self):
+	patient = Patient.objects.get(auth_token=self.user.auth_token)
 	gmeet_link = "https://meet.google.com/jsc-utht-fkj"
-	message = f"Hello {patient.name}, a meeting has started. Click on this link to join the meeting: {gmeet_link}"
-	send_message(request,message)
+	message = f"Hello {patient.username}, a meeting has started. Click on this link to join the meeting: {gmeet_link}"
+	send_message(message)
 
 	return JsonResponse({"Message": "The message has been sent to the patient!"})
