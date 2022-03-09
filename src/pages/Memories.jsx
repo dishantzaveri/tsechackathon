@@ -19,31 +19,31 @@ export const Memories = () => {
   var myHeaders = new Headers();
   myHeaders.append("Authorization", "Token 60a6b5ea81823c883d178b7b2ad57b618d712707");
 
-    const handleSubmit = (event) => {
-      event.preventDefault()
-      console.log(pictures[0])
-      console.log(rel)
-      console.log(desc)
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    console.log(pictures[0])
+    console.log(rel)
+    console.log(desc)
 
-      console.log(new File([user],"user"))
+    console.log(new File([user],"user"))
 
-      var formdata = new FormData();
-      formdata.append("photo", pictures[0]);
-      formdata.append("relation_with_patient", rel);
-      formdata.append("message", desc);
+    var formdata = new FormData();
+    formdata.append("photo", pictures[0]);
+    formdata.append("relation_with_patient", rel);
+    formdata.append("message", desc);
 
-      var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: formdata,
-        redirect: 'follow'
-      };
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: formdata,
+      redirect: 'follow'
+    };
 
-      fetch("https://dementech.pythonanywhere.com/scrapbook/", requestOptions)
-      .then(response => response.json())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
-    }
+    fetch("https://dementech.pythonanywhere.com/scrapbook/", requestOptions)
+    .then(response => response.json())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+  }
 
 
   return (
