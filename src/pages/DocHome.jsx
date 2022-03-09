@@ -48,7 +48,7 @@ export const DocHome = () => {
       <div className='grid grid-cols-12'>
         <div className='col-span-5'>
           <div className='w-full px-12 py-6 flex flex-col justify-center items-center'>
-            <h1 className="text-4xl font-semibold">
+            <h1 className="text-4xl">
               Progress
             </h1>
             <div className='w-[80%]'>
@@ -87,7 +87,7 @@ export const DocHome = () => {
           <div className="flex justify-center items-center">
           <form className='flex flex-col justify-center items-center w-full' onSubmit={handleSubmit}>
             <div className='flex flex-col justify-center items-center w-[70%] gap-4'>
-              <h1 className='text-4xl font-semibold'>Prescribe</h1>
+              <h1 className='text-4xl'>Prescribe</h1>
                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                   <TextField fullWidth id="outlined-basic" onChange={(newValue)=>setMedName(newValue.target.value)} label="Medicine Name" variant="outlined" />
                   <TextField fullWidth id="outlined-basic" onChange={(newValue)=>setDose(newValue.target.value)} label="Dosage" variant="outlined" />
@@ -106,14 +106,14 @@ export const DocHome = () => {
                     renderInput={(params) => <TextField {...params} fullWidth />}
                   />
                 </LocalizationProvider>
-                <button className='px-4 py-2 bg-blue-500 rounded-lg text-xl'>Add Prescription</button>
+                <button className='px-6 py-2 bg-[#3BCBFF] shadow-xl hover:shadow-2xl rounded-xl text-2xl'>Add Prescription</button>
               </div>
             </form>
           </div>
         </div>
         <div className='w-full col-span-7'>
           <div className='flex flex-col justify-center items-center px-12 py-6'>
-            <h1 className='text-4xl font-semibold mb-4'>Graph</h1>
+            <h1 className='text-4xl mb-4'>Graph</h1>
             <BarChart
               width={850}
               height={500}

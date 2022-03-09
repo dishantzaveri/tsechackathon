@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 import { NavBar } from '../components/NavBar';
 import {data} from "../utils/assets/data2";
+import Doctor from '../utils/icons/doctor.png'
 
 export const FamHome = () => {
 
@@ -33,14 +34,63 @@ export const FamHome = () => {
       <div className='grid grid-cols-12'>
         <div className='col-span-5'>
           <div className='w-full px-10 py-6 flex flex-col justify-center items-center'>
-            <div>
-              <h5 className='text-2xl'> Patient Details </h5>
+            <div className='px-16 py-4 flex flex-col justify-center items-center mb-8 rounded-xl shadow-2xl'>
+              <div className='flex flex-col justify-center items-center w-full'>
+                <h5 className='text-2xl mb-6'> Patient Details </h5>
+              </div>
+              <img className='rounded-full h-32 mb-4 border-4 border-gray-800' src={Doctor} />
+              <div className=' w-full text-lg flex flex-col gap-2'>
+                <div className='grid grid-cols-12'>
+                  <div className='col-span-4 font-semibold'>
+                    Name
+                  </div>
+                  <div className='col-span-1 font-semibold'>
+                    :
+                  </div>
+                  <div className='col-span-7'>
+                    Shrey
+                  </div>
+                </div>
+                <div className='grid grid-cols-12'>
+                  <div className='col-span-4 font-semibold'>
+                    Age
+                  </div>
+                  <div className='col-span-1 font-semibold'>
+                    :
+                  </div>
+                  <div className='col-span-7'>
+                    19
+                  </div>
+                </div>
+                <div className='grid grid-cols-12'>
+                  <div className='col-span-4 font-semibold'>
+                    Problem
+                  </div>
+                  <div className='col-span-1 font-semibold'>
+                    :
+                  </div>
+                  <div className='col-span-7'>
+                    Dementia
+                  </div>
+                </div>
+                <div className='grid grid-cols-12'>
+                  <div className='col-span-4 font-semibold'>
+                    Description
+                  </div>
+                  <div className='col-span-1 font-semibold'>
+                    :
+                  </div>
+                  <div className='col-span-7'>
+                    wbwfhwedqbrwnwrq
+                  </div>
+                </div>
+              </div>
             </div>
             <h5 className="text-2xl">
               Progress
             </h5>
             <div className='w-[80%]'>
-              <div className="rounded-xl px-8 py-4 bg-[#3BCBFF] w-full mt-6">
+              <div className="rounded-xl px-8 py-4 bg-[#3BCBFF] w-full mt-6 shadow-xl">
                 <div className="flex justify-between mb-2">
                   <h5 className="text-xl">Puzzles</h5>
                   <h5 className="text-xl">3/7</h5>
@@ -74,7 +124,7 @@ export const FamHome = () => {
           </div>
         </div>
         <div className='w-full col-span-7'>
-          <div className='flex flex-col justify-center items-center px-10 py-6'>
+          <div className='flex flex-col justify-center items-center px-12 py-6'>
             <h5 className='text-2xl mb-4'>Graph</h5>
             <BarChart
               width={800}

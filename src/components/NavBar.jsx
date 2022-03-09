@@ -12,8 +12,8 @@ export const NavBar = () => {
     navigate('/')
   }
   return (
-    <div className='flex justify-between items-center h-16 px-24'>
-      <Link to='/home'>
+    <div className='flex justify-between items-center h-16 px-32'>
+      <Link to='/'>
         <img className='h-8' src={image} />
       </Link>
       <div className='flex'>
