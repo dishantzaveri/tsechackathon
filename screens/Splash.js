@@ -7,14 +7,14 @@ export default function Splash({navigation}) {
   return (
     <View style={styles.container}>
       <LottieView
-        source={require('../assets/splash1.json')}
+        source={require('../assets/animation.json')}
         autoPlay={true}
         loop
       
         style={styles.animation}
       />
       <TouchableOpacity onPress={() => navigation.navigate('SwiperScreens')}>
-      <Image source={require('../assets/logo.png')} style={styles.image} />
+      <Image source={require('../assets/dementechlogo.png')} style={styles.image} />
       </TouchableOpacity>
     </View>
   );
@@ -22,20 +22,21 @@ export default function Splash({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1f2128',
+    backgroundColor: '#FFFFFF',
+    
   },
   animation: {
-    width: 200,
-    height: 200,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 120,
-    marginLeft: 60,
+    width: 300,
+    height: 300,
+    margin:40
+    
+
+    
+    
   },
   image: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 50,
-    marginLeft: 110,
+    margin:80
   },
 });

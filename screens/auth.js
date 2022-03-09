@@ -11,8 +11,8 @@ import {
 import TouchId from 'react-native-touch-id';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-// import Profile from './Profile';
-import Payment from './payment';
+// import { Home } from './Home';
+import BottomTabs from './bottomtabs';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,10 +30,10 @@ export default function Auth() {
 
   return (
     <NavigationContainer independent={true}>
-      <Stack.Navigator>
-        <Stack.Screen name="payment" component={Payment} options={{ headerShown: false }}></Stack.Screen>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen name="bottomtabs" component={BottomTabs}  options={{ headerShown: false }} />
+    </Stack.Navigator>
+  </NavigationContainer>
   );
 }
 

@@ -8,6 +8,7 @@ import SwiperScreens from './screens/SwiperScreens';
 import Payment from './screens/payment';
 import Profile from './screens/Profile';
 import Auth from './screens/auth';
+import BottomTabs from './screens/bottomtabs';
 
 const Stack = createStackNavigator();
 function App() {
@@ -34,10 +35,13 @@ function App() {
           name="payment"
           component={Payment}
           options={{ headerShown: false }}></Stack.Screen>
-             <Stack.Screen
+        <Stack.Screen
           name="auth"
           component={Auth}
           options={{ headerShown: false }}></Stack.Screen>
+
+
+
 
       </Stack.Navigator>
 
