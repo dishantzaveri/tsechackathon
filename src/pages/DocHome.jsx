@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import TextField from '@mui/material/TextField';
 import TimePicker from '@mui/lab/TimePicker';
 import DatePicker from '@mui/lab/DatePicker';
@@ -6,85 +6,41 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 import { NavBar } from '../components/NavBar'
-
-const data = [
-  {
-    name: '1',
-    uv: 300,
-    pv: 0,
-    amt: "Jan",
-  },
-  {
-    name: '2',
-    uv: 300,
-    pv: 0,
-    amt: "Feb",
-  },
-  {
-    name: '3',
-    uv: 200,
-    pv: 0,
-    amt: "Mar",
-  },
-  {
-    name: '4',
-    uv: 278,
-    pv: 200,
-    amt: "Apr",
-  },
-  {
-    name: '5',
-    uv: 189,
-    pv: 100,
-    amt: "May",
-  },
-  {
-    name: '6',
-    uv: 239,
-    pv: 200,
-    amt: "June",
-  },
-  {
-    name: '7',
-    uv: 349,
-    pv: 200,
-    amt: "July",
-  },
-  {
-    name: '8',
-    uv: 349,
-    pv: 0,
-    amt: "August",
-  },
-  {
-    name: '9',
-    uv: 349,
-    pv: 430,
-    amt: "Sept",
-  },
-  {
-    name: '10',
-    uv: 349,
-    pv: 430,
-    amt: "Oct",
-  },
-  {
-    name: '11',
-    uv: 349,
-    pv: 430,
-    amt: "Nov",
-  },
-  {
-    name: '12',
-    uv: 349,
-    pv: 430,
-    amt: "Dec",
-  },
-]
+import { data } from '../utils/assets/data';
 
 export const DocHome = () => {
+  const [medName, setMedName] = useState('')
+  const [dose, setDose] = useState('')
   const [time, setTime] = useState(new Date())
   const [date, setDate] = useState(new Date())
+
+  var myHeaders = new Headers();
+  myHeaders.append("Authorization", "Token 60a6b5ea81823c883d178b7b2ad57b618d712707");
+  myHeaders.append("Content-Type", "application/json");
+  myHeaders.append("Cookie", "csrftoken=p7qGZ8yL3XmvdIt0rbPNtqGGbwmJHvuyx0TbcCJOOxVowa3DrfXaZONNShv9uWYI; sessionid=fcs5yk9xxfl86iia5jt675xwm45cnauf");
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+
+    var raw = JSON.stringify({
+      "name": medName,
+      "dosage_info": dose,
+      "date": date.getFullYear()+'-'+date.getUTCMonth()+'-'+date.getDate(),
+      "time": time.getHours()+':'+time.getMinutes()+':00'
+    });
+
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
+    fetch("https://dementech.pythonanywhere.com/medicine_details/", requestOptions)
+      .then(response => response.json())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+  }
   
   return (
     <div>
@@ -129,28 +85,30 @@ export const DocHome = () => {
             </div> 
           </div>
           <div className="flex justify-center items-center">
-            <div className='w-[70%] flex flex-col justify-center items-center gap-4'>
+          <form className='flex flex-col justify-center items-center w-full' onSubmit={handleSubmit}>
+            <div className='flex flex-col justify-center items-center w-[70%] gap-4'>
               <h1 className='text-4xl font-semibold'>Prescribe</h1>
-              <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <TextField fullWidth id="outlined-basic" label="Medicine Name" variant="outlined" />
-                <TextField fullWidth id="outlined-basic" label="Dosage" variant="outlined" />
-                <DatePicker
-                  label="Date"
-                  value={date}
-                  onChange={(newValue) => {
-                    setDate(newValue);
-                  }}
-                  renderInput={(params) => <TextField {...params} fullWidth />}
-                />
-                <TimePicker
-                  label="Time"
-                  value={time}
-                  onChange={newValue => setTime(newValue)}
-                  renderInput={(params) => <TextField {...params} fullWidth />}
-                />
-              </LocalizationProvider>
-              <button className='px-4 py-2 bg-blue-500 rounded-lg text-xl'>Add Prescription</button>
-            </div>
+                <LocalizationProvider dateAdapter={AdapterDateFns}>
+                  <TextField fullWidth id="outlined-basic" onChange={(newValue)=>setMedName(newValue.target.value)} label="Medicine Name" variant="outlined" />
+                  <TextField fullWidth id="outlined-basic" onChange={(newValue)=>setDose(newValue.target.value)} label="Dosage" variant="outlined" />
+                  <DatePicker
+                    label="Date"
+                    value={date}
+                    onChange={(newValue) => {
+                      setDate(newValue);
+                    }}
+                    renderInput={(params) => <TextField {...params} fullWidth />}
+                  />
+                  <TimePicker
+                    label="Time"
+                    value={time}
+                    onChange={newValue => setTime(newValue)}
+                    renderInput={(params) => <TextField {...params} fullWidth />}
+                  />
+                </LocalizationProvider>
+                <button className='px-4 py-2 bg-blue-500 rounded-lg text-xl'>Add Prescription</button>
+              </div>
+            </form>
           </div>
         </div>
         <div className='w-full col-span-7'>
@@ -172,8 +130,8 @@ export const DocHome = () => {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar name="healthy" dataKey="pv" fill="#FB008B" />
-              <Bar name="junk" dataKey="uv" fill="#FCC13F" />
+              <Bar name="healthy" dataKey="pv" fill="#FF4848" />
+              <Bar name="junk" dataKey="uv" fill="#3BCBFF" />
             </BarChart>
           </div>
         </div>
