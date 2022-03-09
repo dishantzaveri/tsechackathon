@@ -41,7 +41,7 @@ class RegisterAPI(GenericAPIView):
 class LoginAPI(GenericAPIView):
 	
 	serializer_class = LoginSerializer
-	#
+	
 	def post(self,request,*args,**kwargs ):
 		username = request.data.get('username',None)
 		password = request.data.get('password',None)
@@ -82,7 +82,8 @@ class MedicineAPI(viewsets.ModelViewSet):
 					patient = medicine_obj.patient
 					dosage_info = medicine_obj.dosage_info
 					medicine_name = medicine_obj.name
-					message = f"Hello {patient.username}, it is time to take {medicine_name}.The instructions are: {dosage_info}"
+					#message = f"Hello {patient.username}, it is time to take {medicine_name}.The instructions are: {dosage_info}"
+					message = f"Hello Shrey, it is time to take {medicine_name}.The instructions are: {dosage_info}"
 					send_message(message)
 		
 		return JsonResponse({"Message": "The message has been sent to the patient!"})
@@ -112,3 +113,22 @@ def meetlink(self):
 	send_message(message)
 
 	return JsonResponse({"Message": "The message has been sent to the patient!"})
+
+class MemeAPI(viewsets.ModelViewSet):
+		queryset = Memes.objects.all()
+		serializer_class = MemeSerializer
+		permission_classes = [permissions.IsAuthenticated]
+		
+		def get_queryset(self):
+			meme_objs = Memes.objects.filter(patient = self.request.user)
+			return meme_objs
+		
+		def perform_create(self,serializer):
+			serializer.save(patient = self.request.user)
+			
+		def update(self, request, *args, **kwargs):
+			kwargs['partial'] = True
+			return super().update(request, *args, **kwargs)
+
+
+

@@ -10,6 +10,8 @@ from django.conf.urls.static import static
 router = DefaultRouter()
 router.register(r'medicine_details', views.MedicineAPI)
 router.register(r'scrapbook', views.ScrapBookAPI)
+router.register(r'meme', views.MemeAPI)
+
 
 urlpatterns = [
     path('', include(router.urls)),

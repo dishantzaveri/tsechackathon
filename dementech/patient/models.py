@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.forms import URLField
 from rest_framework.authtoken.models import Token
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -33,3 +34,7 @@ class ScrapBook(models.Model):
     user_image = models.ImageField(upload_to = 'family_members/',null=True,blank=True)
     relation_with_patient = models.CharField(max_length=20,null=True,blank=True)
     message = models.TextField(max_length = 200,blank=True,null=True)
+
+class Memes(models.Model):
+    patient = models.ForeignKey('Patient',null=False,default=1,on_delete=models.CASCADE)
+    meme_url = URLField()

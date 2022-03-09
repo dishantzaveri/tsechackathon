@@ -46,3 +46,10 @@ class ScrapBookSerializer(serializers.ModelSerializer):
 		model = ScrapBook
 		fields = '__all__'
 
+class MemeSerializer(serializers.ModelSerializer):
+	patient = serializers.ReadOnlyField(source='patient.username')
+
+	class Meta:
+		model = Memes
+		fields = '__all__'
+
