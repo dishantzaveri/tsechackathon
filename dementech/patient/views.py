@@ -115,12 +115,12 @@ def meetlink(self):
 	return JsonResponse({"Message": "The message has been sent to the patient!"})
 
 class MemeAPI(viewsets.ModelViewSet):
-		queryset = Memes.objects.all()
+		queryset = Meme.objects.all()
 		serializer_class = MemeSerializer
 		permission_classes = [permissions.IsAuthenticated]
 		
 		def get_queryset(self):
-			meme_objs = Memes.objects.filter(patient = self.request.user)
+			meme_objs = Meme.objects.filter(patient = self.request.user)
 			return meme_objs
 		
 		def perform_create(self,serializer):

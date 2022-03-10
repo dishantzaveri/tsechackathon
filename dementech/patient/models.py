@@ -35,6 +35,6 @@ class ScrapBook(models.Model):
     relation_with_patient = models.CharField(max_length=20,null=True,blank=True)
     message = models.TextField(max_length = 200,blank=True,null=True)
 
-class Memes(models.Model):
+class Meme(models.Model):
     patient = models.ForeignKey('Patient',null=False,default=1,on_delete=models.CASCADE)
-    meme_url = URLField()
+    meme_url = models.CharField(max_length=100,blank=True,null=True)

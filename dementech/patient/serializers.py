@@ -48,8 +48,9 @@ class ScrapBookSerializer(serializers.ModelSerializer):
 
 class MemeSerializer(serializers.ModelSerializer):
 	patient = serializers.ReadOnlyField(source='patient.username')
+	#meme_url = serializers.URLField()
 
 	class Meta:
-		model = Memes
+		model = Meme
 		fields = '__all__'
 
