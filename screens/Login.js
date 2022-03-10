@@ -96,7 +96,7 @@ export default function Login({ navigation }) {
         mode="contained"
         onPress={() => {
           saveData();
-          navigation.navigate('payment');
+          navigation.navigate('Info');
         }}
         style={{ marginTop: 6 , color:"#000000"}}>
        LOGIN

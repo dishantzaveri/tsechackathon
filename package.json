@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.16.1",
+    "@react-native-community/datetimepicker": "^5.1.0",
     "@react-native-community/masked-view": "^0.1.11",
+    "@react-native-firebase/app": "^14.5.1",
     "@react-navigation/bottom-tabs": "^6.2.0",
     "@react-navigation/material-top-tabs": "^6.1.1",
     "@react-navigation/native": "^6.0.8",
@@ -30,6 +32,7 @@
     "react-native-modal": "^13.0.1",
     "react-native-paper": "^4.11.2",
     "react-native-picture-puzzle": "^1.0.0",
+    "react-native-push-notification": "^8.1.1",
     "react-native-razorpay": "^2.2.8",
     "react-native-react-native-quiz-single-choice": "^1.0.2",
     "react-native-reanimated": "^2.4.1",

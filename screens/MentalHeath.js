@@ -184,9 +184,16 @@ const MentalHeath = props => {
               }}
             />
           </View>
-
-
-     
+        </View>
+        <View style={styles.rough}>
+          <TouchableOpacity
+            onPress={() => {
+              props.navigation.navigate('Joke');
+            }}>
+            <View style={styles.createMemeContainer}>
+              <Text style={styles.createMemeText}>JOKES</Text>
+            </View>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </View>
@@ -211,13 +218,30 @@ const styles = StyleSheet.create({
   container1:{
     backgroundColor:"#FFFFFF",
     flex:1,
-    marginBottom:80
+    marginVertical:10
   },
   trackTitle: {
     fontSize: 18,
     textTransform: 'uppercase',
     fontWeight: 'bold',
     color:"#000000"
+  },
+  createMemeContainer: {
+    width: 100,
+    height: 40,
+    backgroundColor: '#FF4848',
+    borderRadius: 10,
+    margin:40,
+
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  createMemeText: {
+    color: 'white',
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   track: {
     width: 150,
@@ -243,23 +267,6 @@ const styles = StyleSheet.create({
     opacity: 1,
     marginBottom:10
   },
-  // createMemeContainer: {
-  //   width: 150,
-  //   height: 40,
-  //   backgroundColor: '#46703b',
-  //   borderRadius: 10,
-  //   marginLeft: 20,
-  //   marginBottom: 20,
-  //   display: 'flex',
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  // },
-  // createMemeText: {
-  //   color: 'white',
-  //   fontWeight: 'bold',
-  //   textTransform: 'uppercase',
-  // },
-
   YourDailyRead: {
     marginTop: 10,
     marginBottom: 10,

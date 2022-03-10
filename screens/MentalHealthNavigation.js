@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import MentalHeath from './MentalHeath';
 import TrackList from './TrackList';
 import Track from './TrackPlayer';
-import CreateJoke from './CreateJoke';
+
 const MentalHealthNavigation = () => {
     const Stack = createStackNavigator();
   return (
@@ -12,7 +12,7 @@ const MentalHealthNavigation = () => {
         <Stack.Screen options={{headerShown: false}} name="Mental Health" component={MentalHeath} />
         <Stack.Screen options={{headerShown: false}} name="TrackList" component={TrackList} />
         <Stack.Screen options={{headerShown: false}} name="Track" component={Track} />
-        <Stack.Screen options={{headerShown: false}} name="CreateJoke" component={CreateJoke} />
+      
     
     </Stack.Navigator>
   )

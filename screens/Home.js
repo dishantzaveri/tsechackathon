@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, Image, ScrollView,Linking,} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import {colors} from '../config/colors';
 import {styles} from './styles';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Home = ({navigation}) => {
   const topics = [
@@ -16,7 +17,6 @@ const Home = ({navigation}) => {
       url: require('../assets/images/topics/topic2cardbg.png'),
       background: colors.white,
       labelColor: colors.black
-      
     },
     {
       title: 'Increase Happiness',
@@ -35,6 +35,13 @@ const Home = ({navigation}) => {
       title: 'Personal Growth',
     
       url: require('../assets/images/topics/topic5cardbg.png'),
+      background: colors.white,
+     labelColor: '#FFECCC',labelColor: colors.black
+    },
+    {
+      title: 'Alarms',
+    
+      url: require('../assets/images/topics/topic6cardbg.png'),
       background: colors.white,
      labelColor: '#FFECCC',labelColor: colors.black
     },
@@ -96,10 +103,30 @@ const Home = ({navigation}) => {
                     </Text>
                   </View>
                   </TouchableOpacity>
+                  
                 );
               }
             })}
           </View>
+          
+<TouchableOpacity
+style={{
+  borderWidth: 1,
+  borderColor: 'rgba(0,0,0,0.2)',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: 70,
+  position: 'absolute',
+  bottom: 10,
+  right: 10,
+  height: 70,
+  backgroundColor: '#fff',
+  borderRadius: 100,
+}}
+>
+<Icon name='ios-plus' size={30} color='#01a699' />
+</TouchableOpacity>
+         
         </View>
       </ScrollView>
     </View>

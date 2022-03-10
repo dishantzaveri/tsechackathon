@@ -12,7 +12,7 @@ import {
 import axios from 'axios';
 import {ActivityIndicator} from 'react-native-paper';
 
-const CreateJoke = () => {
+const CreateJokes = ({navigation}) => {
   const [loading, setLoading] = useState(true);
   const [memeArray, setMemeArray] = useState([]);
   const [meme, setMeme] = useState(null);
@@ -54,7 +54,7 @@ const CreateJoke = () => {
           <>
             <View style={styles.container}>
               <View style={styles.header}>
-                <Text style={styles.headerText}>Create your joke</Text>
+                <Text style={styles.headerText}>Meme Generator</Text>
               </View>
               <View style={styles.memeContainer}>
                 <View style={styles.memeTextContainer}>
@@ -95,7 +95,7 @@ const CreateJoke = () => {
                     }}
                   />
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Info')}>
                   <View style={styles.postButton}>
                     <Text
                       style={{
@@ -117,7 +117,7 @@ const CreateJoke = () => {
   );
 };
 
-export default CreateJoke;
+export default CreateJokes;
 
 const styles = StyleSheet.create({
   container: {

@@ -10,6 +10,9 @@ import Profile from './screens/Profile';
 import Auth from './screens/auth';
 import BottomTabs from './screens/bottomtabs';
 import Quiz from './screens/Quiz';
+import CreateJokes from './screens/CreateJokes';
+import Info from './screens/Info';
+import ChatBot from './screens/ChatBot';
 
 const Stack = createStackNavigator();
 function App() {
@@ -40,6 +43,20 @@ function App() {
           name="auth"
           component={Auth}
           options={{ headerShown: false }}></Stack.Screen>
+           <Stack.Screen
+          name="CreateJokes"
+          component={CreateJokes}
+          options={{ headerShown: false }}></Stack.Screen>
+           <Stack.Screen
+          name="Info"
+          component={Info}
+          options={{ headerShown: false }}></Stack.Screen>
+           <Stack.Screen
+          name="ChatBot"
+          component={ChatBot}
+          options={{ headerShown: false }}></Stack.Screen>
+    
+    
     
 
 

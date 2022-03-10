@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "431550838156",
+    "project_id": "dementia-eb054",
+    "storage_bucket": "dementia-eb054.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431550838156:android:62197a565fd00ccb9c52a9",
+        "android_client_info": {
+          "package_name": "com.tsechackathon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "431550838156-nbelugjordpfj37bdpt0pa0ecvk99ul5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAjZdf7pxFDzW0dR04GIBfZwLSLYnVHx8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "431550838156-nbelugjordpfj37bdpt0pa0ecvk99ul5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
