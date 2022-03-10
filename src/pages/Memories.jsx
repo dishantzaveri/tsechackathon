@@ -1,12 +1,14 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import ImageUploader from 'react-images-upload';
 import { NavBar } from '../components/NavBar'
 import { TextField } from '@mui/material';
 import { Razorpay } from '../components/Razorpay';
 import user from "../utils/icons/1.jpg"
 import Meme from '../components/Meme';
+import { GlobalContext } from '../context/GlobalContext'
 
 export const Memories = () => {
+  const { token } = useContext(GlobalContext)
   const [pictures, setPictures] = useState([])
   const [rel, setRel] = useState('')
   const [desc, setDesc] = useState('')
@@ -16,7 +18,7 @@ export const Memories = () => {
   }
 
   var myHeaders = new Headers();
-  myHeaders.append("Authorization", "Token 60a6b5ea81823c883d178b7b2ad57b618d712707");
+  myHeaders.append("Authorization", "Token " + token);
 
   var requestOptions = {
     method: 'GET',
@@ -44,18 +46,18 @@ export const Memories = () => {
   }
 
   var myHeaders2 = new Headers();
-    myHeaders2.append("Authorization", "Token d1ec4e38ba3181b9b0a1eb675318861644d1d78e");
+    myHeaders2.append("Authorization", "Token " + token);
     myHeaders2.append("Cookie", "csrftoken=PNWvCigcHKd01ul44FUpyLNwLbkVZTJNHv4NtPEwmhnedricHyK02uduZJy3Uump");
 
   var requestOptions2 = {
     method: 'GET',
-    headers: myHeaders,
+    headers: myHeaders2,
     redirect: 'follow'
   };
 
   const handleClick = () => {
 
-    fetch("http://127.0.0.1:8000/videocall", requestOptions2)
+    fetch("http://dementech.pythonanywhere.com/videocall", requestOptions2)
       .then(response => response.json())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));

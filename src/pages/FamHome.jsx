@@ -1,17 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 import { NavBar } from '../components/NavBar';
 import {data} from "../utils/assets/data2";
 import shrey from '../utils/icons/Shrey.jpeg';
+import { GlobalContext } from '../context/GlobalContext'
 
 export const FamHome = () => {
 
+  const { token } = useContext(GlobalContext)
   const [pres, setPres] = useState()
 
   useEffect(()=> {
-
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Token 60a6b5ea81823c883d178b7b2ad57b618d712707");
+    myHeaders.append("Authorization", "Token " + token);
   
     var requestOptions = {
       method: 'GET',
@@ -142,8 +143,8 @@ export const FamHome = () => {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar name="healthy" dataKey="pv" fill="#FB008B" />
-              <Bar name="junk" dataKey="uv" fill="#FCC13F" />
+              <Bar name="cholestrol" dataKey="pv" fill="#3BCBFF" />
+              <Bar name="non-cholestrol" dataKey="uv" fill="#FF4848" />
             </BarChart>
           </div>
           <div className="flex flex-col justify-center items-center px-12 gap-2 my-12">
