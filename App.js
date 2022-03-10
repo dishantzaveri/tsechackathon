@@ -12,7 +12,6 @@ import BottomTabs from './screens/bottomtabs';
 import Quiz from './screens/Quiz';
 import CreateJokes from './screens/CreateJokes';
 import Info from './screens/Info';
-import ChatBot from './screens/ChatBot';
 
 
 const Stack = createStackNavigator();
@@ -52,18 +51,6 @@ function App() {
           name="Info"
           component={Info}
           options={{ headerShown: false }}></Stack.Screen>
-           <Stack.Screen
-          name="ChatBot"
-          component={ChatBot}
-          options={{ headerShown: false }}></Stack.Screen>
-         
-    
-    
-    
-
-
-
-
       </Stack.Navigator>
 
     </NavigationContainer>
