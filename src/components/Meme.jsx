@@ -57,6 +57,8 @@ export default function Meme() {
                 "meme_url": response.data.data.url
             })
 
+            console.log(response.data.data.url)
+
             var requestOptions = {
             method: 'POST',
             headers: myHeaders,
