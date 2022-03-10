@@ -4,9 +4,11 @@ import { GlobalContext } from '../context/GlobalContext'
 
 export default function Meme() {
     const { token } = useContext(GlobalContext)
+    console.log(token);
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "Token " + token);
     myHeaders.append("Cookie", "csrftoken=PNWvCigcHKd01ul44FUpyLNwLbkVZTJNHv4NtPEwmhnedricHyK02uduZJy3Uump");
+    myHeaders.append("Content-Type", "application/json");
 
     const [meme, saveMemes] = useState()
     const [input, setInput] = useState([])
