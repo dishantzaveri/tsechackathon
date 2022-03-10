@@ -4,6 +4,7 @@ import { NavBar } from '../components/NavBar';
 import {data} from "../utils/assets/data2";
 import shrey from '../utils/icons/Shrey.jpeg';
 import { GlobalContext } from '../context/GlobalContext'
+import { Row } from '../components/Row';
 
 export const FamHome = () => {
 
@@ -126,7 +127,7 @@ export const FamHome = () => {
         </div>
         <div className='w-full col-span-7'>
           <div className='flex flex-col justify-center items-center px-12 py-6'>
-            <h5 className='text-2xl mb-4'>Graph</h5>
+            <h5 className='text-2xl mb-4'>Diet Graph</h5>
             <BarChart
               width={800}
               height={500}
@@ -164,20 +165,7 @@ export const FamHome = () => {
               </div>
             </div>
             {pres?pres.map((item, index)=>
-                <div key={index} className='grid grid-cols-12 w-full'>
-                <div className='col-span-2 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-                  <h5 className="text-xl">{item.time}</h5>
-                </div>
-                <div className='col-span-4 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-                  <h5 className="text-xl">{item.name}</h5>
-                </div>
-                <div className='col-span-3 flex flex-col justify-center items-center border-r-2 border-gray-400'>
-                  <h5 className="text-xl">{item.dosage_info}</h5>
-                </div>
-                <div className='col-span-3 flex flex-col justify-center items-center'>
-                  <h5 className="text-xl">Taken</h5>
-                </div>
-              </div>
+              <Row index={index} item={item} />
             ):
               null
             }

@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import TextField from '@mui/material/TextField';
 import TimePicker from '@mui/lab/TimePicker';
 import DatePicker from '@mui/lab/DatePicker';
@@ -115,7 +115,7 @@ export const DocHome = () => {
         </div>
         <div className='w-full col-span-7'>
           <div className='flex flex-col justify-center items-center px-12 py-6'>
-            <h1 className='text-4xl mb-4'>Graph</h1>
+            <h1 className='text-4xl mb-4'>Diet Graph</h1>
             <BarChart
               width={850}
               height={500}
