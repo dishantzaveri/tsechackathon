@@ -7,36 +7,38 @@ import Logo from '../utils/icons/Group 1.png'
 import { GlobalContext } from '../context/GlobalContext'
 
 export const LoginFamily = () => {
-  const { setLogin } = useContext(GlobalContext)
+  const { setLogin, setToken } = useContext(GlobalContext)
   let navigate = useNavigate();
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const handleClick = () => {
-    setLogin('family')
-    localStorage.setItem('login', 'family')
-    navigate('/fam/home')
-    // let data = JSON.stringify({
-    //   "email": email,
-    //   "password": password,
-    // });
+    
+    let data = JSON.stringify({
+      "email": email,
+      "password": password,
+    });
   
-    // let config = {
-    //   method: 'post',
-    //   url: 'https://findmyplug.herokuapp.com/login/',
-    //   headers: { 
-    //       'Content-Type': 'application/json'
-    //   },
-    //   data : data
-    // };
-    // axios(config)
-    // .then((response) => {
-    //   console.log(response);
-    //   localStorage.setItem('token', JSON.stringify(response.data.token))
-    // })
-    // .catch((error) => {
-    //   console.log(error);
-    // });
+    let config = {
+      method: 'post',
+      url: 'http://dementech.pythonanywhere.com/login',
+      headers: { 
+          'Content-Type': 'application/json'
+      },
+      data : data
+    };
+    axios(config)
+    .then((response) => {
+      console.log(response);
+      setLogin('family')
+      setToken(response.token)
+      localStorage.setItem('login', 'family')
+      localStorage.setItem('token', response.token)
+      navigate('/fam/home')
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   }
   return (
     <div className="h-[90vh] flex justify-center items-center">

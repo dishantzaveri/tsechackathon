@@ -142,8 +142,8 @@ export const FamHome = () => {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar name="healthy" dataKey="pv" fill="#FB008B" />
-              <Bar name="junk" dataKey="uv" fill="#FCC13F" />
+              <Bar name="cholestrol" dataKey="pv" fill="#3BCBFF" />
+              <Bar name="non-cholestrol" dataKey="uv" fill="#FF4848" />
             </BarChart>
           </div>
           <div className="flex flex-col justify-center items-center px-12 gap-2 mt-4 mb-12">
