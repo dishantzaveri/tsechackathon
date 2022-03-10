@@ -36,7 +36,7 @@ export const DocHome = () => {
       redirect: 'follow'
     };
 
-    fetch("https://dementech.pythonanywhere.com/medicine_details/", requestOptions)
+    fetch("http://dementech.pythonanywhere.com/medicine_details/", requestOptions)
       .then(response => response.json())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));

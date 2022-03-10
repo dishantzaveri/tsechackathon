@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 import { NavBar } from '../components/NavBar';
 import {data} from "../utils/assets/data2";
-import Doctor from '../utils/icons/doctor.png'
+import shrey from '../utils/icons/Shrey.jpeg';
 
 export const FamHome = () => {
 
@@ -20,12 +20,12 @@ export const FamHome = () => {
     };
   
     fetch("http://dementech.pythonanywhere.com/medicine_details/", requestOptions)
-      .then(response => response.json())
-      .then(result => {
-        console.log(result)
-        setPres(result)
-      })
-      .catch(error => console.log('error', error));
+    .then(response => response.json())
+    .then(result => {
+      console.log(result)
+      setPres(result)
+    })
+    .catch(error => console.log('error', error));
   }, [])
   
   return (
@@ -38,7 +38,7 @@ export const FamHome = () => {
               <div className='flex flex-col justify-center items-center w-full'>
                 <h5 className='text-2xl mb-6'> Patient Details </h5>
               </div>
-              <img className='rounded-full h-32 mb-4 border-4 border-gray-800' src={Doctor} />
+              <img className='rounded-full h-32 mb-4 border-4 border-gray-800' src={shrey} />
               <div className=' w-full text-lg flex flex-col gap-2'>
                 <div className='grid grid-cols-12'>
                   <div className='col-span-4 font-semibold'>
@@ -81,7 +81,7 @@ export const FamHome = () => {
                     :
                   </div>
                   <div className='col-span-7'>
-                    wbwfhwedqbrwnwrq
+                    Mental illness
                   </div>
                 </div>
               </div>
@@ -146,8 +146,8 @@ export const FamHome = () => {
               <Bar name="non-cholestrol" dataKey="uv" fill="#FF4848" />
             </BarChart>
           </div>
-          <div className="flex flex-col justify-center items-center px-12 gap-2 mt-4 mb-12">
-            <h5 className="text-2xl mb-4">Todays Prescription</h5>
+          <div className="flex flex-col justify-center items-center px-12 gap-2 my-12">
+            <h5 className="text-2xl mb-4">Today's Prescription</h5>
             <div className='grid grid-cols-12 w-full'>
               <div className='col-span-2 flex flex-col justify-center items-center border-r-2 border-gray-400'>
                 <h5 className="text-2xl">Timing</h5>

@@ -43,7 +43,7 @@ export const LoginDoctor = () => {
   return (
     <div className="h-[90vh] flex justify-center items-center">
       <div className='w-[40vw] flex flex-col justify-center items-center gap-12'>
-        <img className='h-24' src={Logo} />
+        <img src={Logo} />
         <h1 className='text-4xl font-semibold'>Login as a Doctor</h1>
         <input className='px-6 py-4 border-2 border-gray-900 text-lg rounded-xl w-full' placeholder='Enter Patient Name' type="text" value={email} onChange={e => setEmail(e.target.value)} />
         <div className='w-full'>
