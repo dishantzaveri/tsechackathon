@@ -186,14 +186,30 @@ const MentalHeath = props => {
           </View>
         </View>
         <View style={styles.rough}>
+          <View style={styles.rough1}>
           <TouchableOpacity
             onPress={() => {
-              props.navigation.navigate('Joke');
+              props.navigation.navigate('Jokes');
             }}>
             <View style={styles.createMemeContainer}>
               <Text style={styles.createMemeText}>JOKES</Text>
             </View>
+            
           </TouchableOpacity>
+          </View>
+          <View style={styles.rough2}>
+          <TouchableOpacity
+            onPress={() => {
+              props.navigation.navigate('Reminders');
+            }}>
+            <View style={styles.createMemeContainer}>
+              <Text style={styles.createMemeText}>REMINDERS</Text>
+            </View>
+            
+          </TouchableOpacity>
+          </View>
+          
+          
         </View>
       </ScrollView>
     </View>
@@ -231,7 +247,7 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor: '#FF4848',
     borderRadius: 10,
-    margin:40,
+   
 
     alignItems: 'center',
     justifyContent: 'center',
@@ -302,8 +318,14 @@ const styles = StyleSheet.create({
     marginTop: 0,
   },
   rough:{
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection:'row',
+
+  },
+  rough1:{
+    margin:45
+  },
+  rough2:{
+    margin:45
   },
 
   verticalLine: {

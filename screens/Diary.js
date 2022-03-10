@@ -42,9 +42,7 @@ export default function Diary() {
   const renderItem = ({ item }) => {
     return (
       <View style={styles.feedItem} elevation={15}>
-        <ImageBackground source={{
-          uri: item.user_image,
-        }} style={styles.avatar} />
+        <ImageBackground source={require('../assets/person.png')} style={styles.avatar} />
         <View style={{ flex: 1 }}>
           <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
             <View>

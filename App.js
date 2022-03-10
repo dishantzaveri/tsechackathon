@@ -14,6 +14,7 @@ import CreateJokes from './screens/CreateJokes';
 import Info from './screens/Info';
 import ChatBot from './screens/ChatBot';
 
+
 const Stack = createStackNavigator();
 function App() {
 
@@ -55,6 +56,7 @@ function App() {
           name="ChatBot"
           component={ChatBot}
           options={{ headerShown: false }}></Stack.Screen>
+         
     
     
     

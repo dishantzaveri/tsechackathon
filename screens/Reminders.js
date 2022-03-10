@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, Platform, TouchableOpacity} from 'react-native';
 import {colors} from '../config/colors';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import {PrimaryButton} from '../components/PrimaryButton';
-import {styles} from './styles';
+import {styles} from './style';
 const days = [
   {title: 'SU', active: true},
   {title: 'M', active: true},
@@ -13,7 +13,7 @@ const days = [
   {title: 'F', active: false},
   {title: 'S', active: true},
 ];
-export const Reminders = () => {
+export const Reminders = ({navigation}) => {
   const [date, setDate] = useState(new Date(1598051730000));
   const [mode, setMode] = useState('time');
   const [show, setShow] = useState(true);
@@ -76,8 +76,8 @@ export const Reminders = () => {
         })}
       </View>
       <View style={styles.btnWrapper}>
-        <TouchableOpacity>
-        <PrimaryButton background={colors.primary} label={'SAVE'}  />
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+        <PrimaryButton background={colors.blue} label={'SAVE'}  />
 
         <PrimaryButton
           background={colors.white}
