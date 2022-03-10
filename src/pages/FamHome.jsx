@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 import { NavBar } from '../components/NavBar';
 import {data} from "../utils/assets/data2";
-import Doctor from '../utils/icons/doctor.png'
+import shrey from '../utils/icons/Shrey.jpeg';
 
 export const FamHome = () => {
 
@@ -11,7 +11,7 @@ export const FamHome = () => {
   useEffect(()=> {
 
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Token d1ec4e38ba3181b9b0a1eb675318861644d1d78e");
+    myHeaders.append("Authorization", "Token 60a6b5ea81823c883d178b7b2ad57b618d712707");
   
     var requestOptions = {
       method: 'GET',
@@ -19,7 +19,7 @@ export const FamHome = () => {
       redirect: 'follow'
     };
   
-    fetch("http://localhost:8000/medicine_details/", requestOptions)
+    fetch("http://dementech.pythonanywhere.com/medicine_details/", requestOptions)
     .then(response => response.json())
     .then(result => {
       console.log(result)
@@ -38,7 +38,7 @@ export const FamHome = () => {
               <div className='flex flex-col justify-center items-center w-full'>
                 <h5 className='text-2xl mb-6'> Patient Details </h5>
               </div>
-              <img className='rounded-full h-32 mb-4 border-4 border-gray-800' src={Doctor} />
+              <img className='rounded-full h-32 mb-4 border-4 border-gray-800' src={shrey} />
               <div className=' w-full text-lg flex flex-col gap-2'>
                 <div className='grid grid-cols-12'>
                   <div className='col-span-4 font-semibold'>
@@ -81,7 +81,7 @@ export const FamHome = () => {
                     :
                   </div>
                   <div className='col-span-7'>
-                    wbwfhwedqbrwnwrq
+                    Mental illness
                   </div>
                 </div>
               </div>

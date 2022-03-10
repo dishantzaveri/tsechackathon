@@ -4,7 +4,7 @@ import axios from "axios";
 export default function Meme() {
 
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Token d1ec4e38ba3181b9b0a1eb675318861644d1d78e");
+    myHeaders.append("Authorization", "Token 60a6b5ea81823c883d178b7b2ad57b618d712707");
     myHeaders.append("Cookie", "csrftoken=PNWvCigcHKd01ul44FUpyLNwLbkVZTJNHv4NtPEwmhnedricHyK02uduZJy3Uump");
 
     const [meme, saveMemes] = useState()
@@ -60,7 +60,7 @@ export default function Meme() {
             redirect: 'follow'
             };
 
-            fetch("http://127.0.0.1:8000/meme/", requestOptions)
+            fetch("https://dementech.pythonanywhere.com/meme/", requestOptions)
             .then(response => response.json())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));
@@ -75,18 +75,18 @@ export default function Meme() {
         };
 
     return (
-        <div className="py-5">
-            <img src={meme?.memes[num].url} alt="meme"/>
-            <form onSubmit={handleSubmit}>
-            {
-                Array(parseInt(meme?meme.memes[num].box_count:2)).fill(0).map((number, index)=>(
-                    <div key={index} className="form">
-                        <input id="outlined-required" placeholder={"Box "+(index+1)} onChange={(e) => clickHandle(e, index)} />
-                    </div>
-                ))
-            }
-            <button type="submit"> Submit </button>
-            </form>
-        </div>
+        <form onSubmit={handleSubmit}>
+            <div className="flex flex-col justify-center items-center gap-4">
+                <img className='w-48' src={meme?.memes[num].url} alt="meme"/>
+                {
+                    Array(parseInt(meme?meme.memes[num].box_count:2)).fill(0).map((number, index)=>(
+                        <div key={index} className="form">
+                            <input className='px-4 py-2 border-2 border-gray-700 text-lg rounded-xl w-full' id="outlined-required" placeholder={"Box "+(index+1)} onChange={(e) => clickHandle(e, index)} />
+                        </div>
+                    ))
+                }
+                <button className='px-6 py-2 bg-blue-500 rounded-lg text-xl mb-1' type="submit"> Submit </button>
+            </div>
+        </form>
     )
 }
