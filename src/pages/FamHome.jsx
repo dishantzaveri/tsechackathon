@@ -1,17 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 import { NavBar } from '../components/NavBar';
 import {data} from "../utils/assets/data2";
 import shrey from '../utils/icons/Shrey.jpeg';
+import { GlobalContext } from '../context/GlobalContext'
 
 export const FamHome = () => {
 
+  const { token } = useContext(GlobalContext)
   const [pres, setPres] = useState()
 
   useEffect(()=> {
-
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Token 60a6b5ea81823c883d178b7b2ad57b618d712707");
+    myHeaders.append("Authorization", "Token " + token);
   
     var requestOptions = {
       method: 'GET',

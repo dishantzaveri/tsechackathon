@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
+import { GlobalContext } from '../context/GlobalContext'
 
 export default function Meme() {
-
+    const { token } = useContext(GlobalContext)
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Token 60a6b5ea81823c883d178b7b2ad57b618d712707");
+    myHeaders.append("Authorization", "Token " + token);
     myHeaders.append("Cookie", "csrftoken=PNWvCigcHKd01ul44FUpyLNwLbkVZTJNHv4NtPEwmhnedricHyK02uduZJy3Uump");
 
     const [meme, saveMemes] = useState()
@@ -49,9 +50,10 @@ export default function Meme() {
             headers: {'Content-Type':'multipart/form-data'}
         })
         .then((response)=>{
-
-            var formdata = new FormData();
-            formdata.append("meme_url", response.data.data.url);
+            console.log(response.data.data.url);
+            var formdata = JSON.stringify({
+                "meme_url": response.data.data.url
+            })
 
             var requestOptions = {
             method: 'POST',

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import TextField from '@mui/material/TextField';
 import TimePicker from '@mui/lab/TimePicker';
 import DatePicker from '@mui/lab/DatePicker';
@@ -7,15 +7,17 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 import { NavBar } from '../components/NavBar'
 import { data } from '../utils/assets/data';
+import { GlobalContext } from '../context/GlobalContext'
 
 export const DocHome = () => {
+  const { token } = useContext(GlobalContext)
   const [medName, setMedName] = useState('')
   const [dose, setDose] = useState('')
   const [time, setTime] = useState(new Date())
   const [date, setDate] = useState(new Date())
 
   var myHeaders = new Headers();
-  myHeaders.append("Authorization", "Token 60a6b5ea81823c883d178b7b2ad57b618d712707");
+  myHeaders.append("Authorization", "Token " + token);
   myHeaders.append("Content-Type", "application/json");
   myHeaders.append("Cookie", "csrftoken=p7qGZ8yL3XmvdIt0rbPNtqGGbwmJHvuyx0TbcCJOOxVowa3DrfXaZONNShv9uWYI; sessionid=fcs5yk9xxfl86iia5jt675xwm45cnauf");
 
@@ -130,8 +132,8 @@ export const DocHome = () => {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar name="healthy" dataKey="pv" fill="#FF4848" />
-              <Bar name="junk" dataKey="uv" fill="#3BCBFF" />
+              <Bar name="cholestrol" dataKey="pv" fill="#FF4848" />
+              <Bar name="non-cholestrol" dataKey="uv" fill="#3BCBFF" />
             </BarChart>
           </div>
         </div>

@@ -15,13 +15,13 @@ export const LoginFamily = () => {
   const handleClick = () => {
     
     let data = JSON.stringify({
-      "email": email,
+      "username": email,
       "password": password,
     });
   
     let config = {
       method: 'post',
-      url: 'http://dementech.pythonanywhere.com/login',
+      url: 'http://dementech.pythonanywhere.com/login/',
       headers: { 
           'Content-Type': 'application/json'
       },
@@ -31,9 +31,9 @@ export const LoginFamily = () => {
     .then((response) => {
       console.log(response);
       setLogin('family')
-      setToken(response.token)
+      setToken(response.data.token)
       localStorage.setItem('login', 'family')
-      localStorage.setItem('token', response.token)
+      localStorage.setItem('token', response.data.token)
       navigate('/fam/home')
     })
     .catch((error) => {
