@@ -1,2 +1,2 @@
-# tsechackathon
+# DemenTech
 Help for Dementia Patients
