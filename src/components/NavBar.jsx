@@ -4,11 +4,13 @@ import image from '../utils/icons/Group 1.png'
 import { GlobalContext } from '../context/GlobalContext'
 
 export const NavBar = () => {
-  const { login, setLogin } = useContext(GlobalContext)
+  const { login, setLogin, setToken } = useContext(GlobalContext)
   const navigate = useNavigate()
   const handleLogout = () => {
     localStorage.removeItem('login')
     setLogin('')
+    localStorage.removeItem('token')
+    setToken('')
     navigate('/')
   }
   return (
