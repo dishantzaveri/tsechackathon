@@ -13,7 +13,7 @@ const Home = ({navigation}) => {
       background: colors.white,
       labelColor: colors.black},
     {
-      title: 'Improve Output',
+      title: 'Puzzles',
       url: require('../assets/images/topics/topic2cardbg.png'),
       background: colors.white,
       labelColor: colors.black
@@ -39,7 +39,7 @@ const Home = ({navigation}) => {
      labelColor: '#FFECCC',labelColor: colors.black
     },
     {
-      title: 'Alarms',
+      title: 'Wordle',
     
       url: require('../assets/images/topics/topic6cardbg.png'),
       background: colors.white,

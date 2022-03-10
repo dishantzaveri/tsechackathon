@@ -40,18 +40,11 @@ const Info = ({navigation}) => {
         style={{marginTop: 6}}>
        Create A joke
       </Button>
-      <Button
-        mode="contained"
-        onPress={() => navigation.navigate('ChatBot')}
-        style={{marginTop: 6}}>
-       Chat
-      </Button>
- 
-      <Button
+            <Button
         mode="contained"
         onPress={() => navigation.navigate('Login')}
         style={{marginTop: 6}}>
-   Logout
+       Logout
       </Button>
  
           </View>
