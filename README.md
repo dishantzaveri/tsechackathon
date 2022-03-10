@@ -81,12 +81,13 @@ Web Preview : Site Link - https://dementech.netlify.app/
   <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/19.jpeg?raw=true" width = 200 height =500 />
  <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/20.jpeg?raw=true" width = 200 height = 500 />
  <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/21.jpeg?raw=true" width = 200 height = 500 />
+ <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/22.jpeg?raw=true" width = 200 height = 500 />
 
 # Backend Preview
 
  <p float="left">
   
-<img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/23.jpeg?raw=true" width = "40%" />
+<img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/24.jpeg?raw=true" width = "40%" />
  <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/b1.png?raw=true" width = "40%" />
  <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/b2.png?raw=true" width = "40%" />
  <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/b3.png?raw=true" width = "40%" />
