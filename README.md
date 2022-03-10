@@ -66,21 +66,21 @@ Web Preview : Site Link - https://dementech.netlify.app/
  App Preview:
  
 <p float="left">
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/7.jpeg?raw=true" width = 200 height =600/>
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/8.jpeg?raw=true" width = 200 height =600/>
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/9.jpeg?raw=true" width = 200 height =600 />
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/10.jpeg?raw=true" width = 300 height =600 />
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/11.jpeg?raw=true" width = 300 height =600/>
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/12.jpeg?raw=true" width = 300 height =600 />
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/13.jpeg?raw=true" width = 300 height =600 />
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/14.jpeg?raw=true" width = 300 height =600 />
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/15.jpeg?raw=true" width = 300 height =600 />
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/16.jpeg?raw=true" width = 300 height =600/>
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/17.jpeg?raw=true" width = 300 height =600 />
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/18.jpeg?raw=true" width = 300 height =600 />
-  <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/19.jpeg?raw=true" width = 300 height =600 />
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/20.jpeg?raw=true" width = 300 height =600 />
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/21.jpeg?raw=true" width = 300 height =600 />
+ <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/7.jpeg?raw=true" width = 200 height =500/>
+ <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/8.jpeg?raw=true" width = 200 height =500/>
+ <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/9.jpeg?raw=true" width = 200 height =500 />
+ <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/10.jpeg?raw=true" width = 200 height =500 />
+ <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/11.jpeg?raw=true" width = 200 height =500/>
+ <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/12.jpeg?raw=true" width = 200 height =500 />
+ <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/13.jpeg?raw=true" width = 200 height =500 />
+ <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/14.jpeg?raw=true" width = 200 height =500 />
+ <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/15.jpeg?raw=true" width = 200 height =500 />
+ <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/16.jpeg?raw=true" width = 200 height =500/>
+ <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/17.jpeg?raw=true" width = 200 height =500 />
+ <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/18.jpeg?raw=true" width = 200 height =500 />
+  <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/19.jpeg?raw=true" width = 200 height =500 />
+ <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/20.jpeg?raw=true" width = 200 height = 500 />
+ <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/21.jpeg?raw=true" width = 200 height = 500 />
 
 # Backend Preview
 
